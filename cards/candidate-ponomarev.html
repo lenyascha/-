@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Досье кандидата — Пономарев Максим</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0b0d16;
+    color:#e7e9ee;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 48px 24px 96px;
+  }
+  .page { max-width: 920px; margin: 0 auto; }
+  .eyebrow {
+    color:#5aa2ff;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  h1 { font-size:36px; font-weight:700; margin-bottom:14px; }
+  .lede { color:#a7adba; font-size:15px; line-height:1.55; max-width:760px; margin-bottom:28px; }
+
+  .stat-row { display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px; }
+  .stat-box {
+    background:#12151f; border:1px solid #232838; border-radius:12px;
+    padding:16px 22px; flex:1; min-width:180px;
+  }
+  .stat-box .label { color:#8b92a3; font-size:13px; margin-bottom:8px; }
+  .stat-box .value { font-size:22px; font-weight:700; }
+  .badge {
+    display:inline-flex; align-items:center; gap:6px;
+    padding:6px 14px; border-radius:999px; font-size:15px; font-weight:600;
+  }
+  .badge.green { background:rgba(45,164,94,0.18); color:#4fd07a; }
+  .badge.amber { background:rgba(210,150,40,0.18); color:#e0b04c; }
+
+  .callout {
+    border:1px solid #6b5323; background:rgba(210,150,40,0.08);
+    border-radius:12px; padding:18px 22px; margin:20px 0 32px;
+    font-size:14.5px; line-height:1.6; color:#d8dae0;
+  }
+  .callout strong { color:#f0c667; }
+
+  section { margin-bottom:36px; }
+  h2 { font-size:20px; font-weight:700; margin-bottom:6px; }
+  .section-note { color:#8b92a3; font-size:13.5px; margin-bottom:18px; }
+
+  .criteria-grid {
+    display:grid; grid-template-columns:repeat(6,1fr); gap:12px;
+    background:#12151f; border:1px solid #232838; border-radius:14px; padding:22px;
+  }
+  .criterion { text-align:center; }
+  .criterion .name { color:#8b92a3; font-size:11px; letter-spacing:0.4px; text-transform:uppercase; margin-bottom:10px; }
+  .criterion .dot {
+    width:40px; height:40px; border-radius:50%; margin:0 auto 8px;
+    display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:700;
+  }
+  .criterion .dot.strong { background:rgba(45,164,94,0.16); color:#4fd07a; border:1.5px solid #2d7a4a; }
+  .criterion .dot.partial { background:rgba(180,130,40,0.16); color:#e0b04c; border:1.5px solid #8a6a20; }
+  .criterion .state { font-size:12.5px; color:#c3c7d1; }
+
+  .timeline { position:relative; padding-left:190px; }
+  .timeline-item { position:relative; padding:0 0 26px 26px; border-left:2px solid #232838; }
+  .timeline-item:last-child { border-color:transparent; }
+  .timeline-item::before {
+    content:''; position:absolute; left:-7px; top:2px; width:12px; height:12px;
+    border-radius:50%; background:#5aa2ff; box-shadow:0 0 0 3px #0b0d16;
+  }
+  .timeline-date {
+    position:absolute; left:-190px; top:0; width:160px; text-align:right;
+    color:#8b92a3; font-size:13px;
+  }
+  .timeline-item .role { font-size:15.5px; font-weight:700; margin-bottom:6px; }
+  .timeline-item .desc { color:#b3b8c4; font-size:13.5px; line-height:1.55; }
+
+  .salary-box {
+    background:#12151f; border:1px solid #232838; border-radius:14px; padding:22px;
+  }
+  .salary-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .salary-fig { font-size:15px; font-weight:700; }
+  .salary-tag { color:#4fd07a; font-size:13.5px; font-weight:600; }
+  .salary-bar { position:relative; height:14px; border-radius:7px; background:#1c2030; margin:14px 0 10px; }
+  .salary-fill { position:absolute; left:0; top:0; bottom:0; width:87%; border-radius:7px; background:linear-gradient(90deg,#2d7a4a,#4fd07a); }
+  .salary-marker { position:absolute; top:-22px; left:100%; transform:translateX(-100%); text-align:right; }
+  .salary-marker .cap-label { font-size:11px; color:#8b92a3; }
+  .salary-marker::after {
+    content:''; position:absolute; right:0; top:20px; width:2px; height:34px; background:#e05c5c;
+  }
+  .salary-note { color:#8b92a3; font-size:13px; line-height:1.55; margin-top:10px; }
+
+  blockquote {
+    border-left:3px solid #5aa2ff; padding:4px 0 4px 18px; margin-bottom:18px;
+  }
+  blockquote p { font-style:italic; color:#d3d6de; font-size:14.5px; line-height:1.6; }
+  blockquote cite { display:block; margin-top:8px; color:#8b92a3; font-size:12.5px; font-style:normal; }
+
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .card {
+    background:#12151f; border:1px solid #232838; border-radius:14px; padding:20px 22px;
+  }
+  .card h3 { font-size:13px; letter-spacing:0.4px; text-transform:uppercase; margin-bottom:10px; }
+  .card.strengths h3 { color:#4fd07a; }
+  .card.risks h3 { color:#e0b04c; }
+  .card p { color:#c3c7d1; font-size:13.5px; line-height:1.6; }
+  .card h3.info { color:#5aa2ff; }
+
+  .verdict {
+    display:flex; gap:28px; align-items:flex-start;
+    background:#12151f; border:1px solid #232838; border-radius:14px; padding:26px;
+  }
+  .verdict .score { font-size:56px; font-weight:800; color:#5aa2ff; white-space:nowrap; }
+  .verdict .score sup { font-size:20px; color:#8b92a3; font-weight:600; }
+  .verdict-table { flex:1; display:flex; flex-direction:column; gap:14px; }
+  .verdict-row { display:grid; grid-template-columns:170px 1fr; gap:16px; }
+  .verdict-row .k { color:#8b92a3; font-size:13px; }
+  .verdict-row .v { font-size:14px; line-height:1.5; color:#e7e9ee; }
+
+  footer { color:#5c6274; font-size:12px; line-height:1.6; border-top:1px solid #232838; padding-top:18px; }
+
+  @media (max-width:720px) {
+    .criteria-grid { grid-template-columns:repeat(3,1fr); }
+    .two-col { grid-template-columns:1fr; }
+    .timeline { padding-left:0; }
+    .timeline-date { position:static; text-align:left; width:auto; margin-bottom:4px; display:block; }
+    .timeline-item { padding-left:20px; }
+    .verdict { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">Досье кандидата · Лидер аналитики данных</div>
+  <h1>Пономарев Максим</h1>
+  <p class="lede">
+    Лидер аналитики данных, Москва — данные из полного досье (резюме HH + чек-лист HR-интервью
+    23.07.2026 + карточка в дашборде сравнения кандидатов + транскрибация интервью 23.07.2026).
+  </p>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="label">Балл</div><div class="value">91 / 100</div></div>
+    <div class="stat-box"><div class="label">Статус</div><div class="badge green">✓ Рекомендую</div></div>
+    <div class="stat-box"><div class="label">ЗП в вилке</div><div class="badge green">✓ Да, с запасом</div></div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="label">Статус на HH</div><div class="value">response</div></div>
+    <div class="stat-box"><div class="label">Возраст</div><div class="value">не указан</div></div>
+    <div class="stat-box"><div class="label">Стаж (резюме)</div><div class="value">14 лет 1 мес.</div></div>
+  </div>
+
+  <div class="callout">
+    <strong>⚠ Расхождение по зарплате.</strong> На интервью кандидат называет вилку 450–520 тыс. ₽
+    (резюме — 480К; всё в рамках потолка 550К). Интервьюер описывает эту сумму как уровень
+    «зам. руководителя высшего звена», но из-за отсутствия стажа на госслужбе стартовая должность —
+    и.о. зам. начальника отдела. Более низкий грейд первой позиции может не поддерживать запрошенный
+    уровень дохода — стоит согласовать вилку под конкретную должность.
+  </div>
+
+  <section>
+    <h2>Профиль по 6 критериям</h2>
+    <p class="section-note">Та же шкала, что в дашборде сравнения — наведите курсор для пояснения.</p>
+    <div class="criteria-grid">
+      <div class="criterion"><div class="name">Опыт</div><div class="dot strong">✓</div><div class="state">Сильно</div></div>
+      <div class="criterion"><div class="name">ИИ</div><div class="dot strong">✓</div><div class="state">Сильно</div></div>
+      <div class="criterion"><div class="name">Governance</div><div class="dot partial">~</div><div class="state">Частично</div></div>
+      <div class="criterion"><div class="name">Масштаб</div><div class="dot strong">✓</div><div class="state">Сильно</div></div>
+      <div class="criterion"><div class="name">Гос-среда</div><div class="dot partial">~</div><div class="state">Частично</div></div>
+      <div class="criterion"><div class="name">ЗП в вилке</div><div class="dot strong">✓</div><div class="state">Сильно</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Карьерная траектория</h2>
+    <p class="section-note">Резюме HH, обновлено 16.07.2026.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Сен 2024 – наст. время</div>
+        <div class="role">Сбер — Технический Product Owner</div>
+        <div class="desc">1 г. 11 мес. Построил аналитический центр с нуля на текущем месте —
+          рост команды с 3 до 35+ человек за два года (backend, Frontend, Data Science, UI/UX,
+          бизнес-аналитики). Продукт Process Mining/ETL-платформы. Продакт-лид AI-ассистента для
+          аналитиков (−8 ч на проверку).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Янв 2024 – Сен 2024</div>
+        <div class="role">Московская Биржа — Team Lead группы аналитиков данных</div>
+        <div class="desc">9 мес. Сформировал группу с нуля под задачи цифрового аудита, внедрил
+          Process Mining и BI-мониторинг рисков в реальном времени.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Апр 2023 – Янв 2024</div>
+        <div class="role">Сбербанк-Технологии — Технический эксперт, Presale</div>
+        <div class="desc">10 мес. 30+ демо для C-level, закрыл 5 enterprise-контрактов на
+          85 млн руб., разработал методологию оценки стоимости внедрения.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Окт 2021 – Апр 2023</div>
+        <div class="role">ГК Иннотех — BI-аналитик</div>
+        <div class="desc">1 г. 7 мес. Реорганизация BI-системы компании; сократил формирование
+          отчётности с 8 ч до 20 мин; AI-инструмент для расшифровки совещаний на open-source моделях.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Июл 2019 – Сен 2021</div>
+        <div class="role">Банк Дом.РФ — Руководитель направления эффективности банковского сопровождения</div>
+        <div class="desc">2 г. 3 мес. BI-платформа для сервисного центра банка (1000+ сотрудников),
+          автоматизация контроля качества данных.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2015 – 2019</div>
+        <div class="role">PepsiCo · Банк ВТБ</div>
+        <div class="desc">Аналитика маршрутизации торговых представителей (PepsiCo); мониторинг
+          кредитных сделок и клиентская поддержка крупного бизнеса (ВТБ).</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Зарплатные ожидания</h2>
+    <p class="section-note">Потолок вилки по вакансии РАЦ — 550 000 ₽ gross.</p>
+    <div class="salary-box">
+      <div class="salary-top">
+        <div class="salary-fig">480 тыс. ₽</div>
+        <div class="salary-tag">в вилке ✓</div>
+      </div>
+      <div class="salary-bar">
+        <div class="salary-fill"></div>
+        <div class="salary-marker"><div class="cap-label">потолок<br>550К</div></div>
+      </div>
+      <p class="salary-note">
+        Цифра подтверждена резюме — 480 000 ₽, с запасом ≈70 000 ₽ до потолка вакансии. На интервью
+        кандидат называет вилку 450–520 тыс. ₽ — интервьюер относит её к уровню «зам. руководителя
+        высшего звена», выше стартового грейда без опыта госслужбы.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Интервью 23.07.2026 — ключевые цитаты</h2>
+    <p class="section-note">HR-интервью, 32 минуты 53 секунды, онлайн. Источник — транскрибация записи (faster-whisper, офлайн).</p>
+
+    <blockquote>
+      <p>«Моя должность — Product Owner, я работаю в продукте, который называется Process Mining.
+      Если в двух словах — это аналитическая платформа для исследования бизнес-процессов и поиска
+      неэффективности в самих бизнес-процессах.»</p>
+      <cite>— о своей роли в Сбере</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>«У меня в команде 10 сотрудников — бэкенд-разработчики, системные аналитики, плюс
+      тестировщики. Это непосредственное моё управление. Плюс есть ещё кросс-функциональные
+      команды — дата-сайентисты, фронтенд-разработчики и дата-инженеры.»</p>
+      <cite>— на вопрос о масштабе управления</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>«Как раз то, что вы сказали про стабильность — мне бы наоборот этого хотелось в текущий
+      момент. А второе — довольно интересно описан сам проект в описании вакансии: что-то
+      глобальное, и ты действительно можешь на что-то влиять.»</p>
+      <cite>— о мотивации перехода на госслужбу</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>«Если про ИИ говорить — сейчас, в Сбере, это ГигаЧат в основном и все его ответвления,
+      есть ГигаКод — аналог Cursor. Сейчас подход такой, чтобы разработка шла через агентскую
+      работу, но брака получается довольно много.»</p>
+      <cite>— о корпоративном контуре ИИ</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>«Моя команда занималась совместно с ML-сайентистами — цель в том, чтобы помочь аналитику
+      преодолеть боль чистого листа, когда непонятно, с чего начать. Агент прогоняет несколько
+      тулов, которые считают неэффективность процесса по нашим метрикам, а дальше всё оборачивается
+      ГигаЧатом и выводится отчёт для пользователя.»</p>
+      <cite>— о продукте AI-ассистента для аналитиков</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>«У меня работа была связана с локальной автоматизацией — отдел порядка 30 человек
+      занимается ипотечными заявками. Мы сделали персонализированные журналы по людям, и всё это
+      выводилось в BI-борде, который обновлялся каждые 5 минут — выглядело как таблица чемпионата
+      по футболу.»</p>
+      <cite>— пример из опыта в Банке Дом.РФ</cite>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Оценка — сильные и слабые стороны</h2>
+    <p class="section-note">Свод по чек-листу HR-интервью, дословно из источников выше.</p>
+    <div class="two-col">
+      <div class="card strengths">
+        <h3>Сильные стороны</h3>
+        <p>Технический бэкграунд в Сбере, глубокая экспертиза в автоматизации процессов и
+        аналитике; системное мышление, структурированность, умеет защищать решения перед критикой
+        (чек-лист HR-интервью).</p>
+      </div>
+      <div class="card risks">
+        <h3>Слабые стороны / риски</h3>
+        <p>Отсутствует опыт работы в госслужбе — стартовая должность, скорее всего, и.о. зам.
+        начальника отдела, а названная на интервью вилка 450–520К соответствует более высокому
+        грейду. Грейд и вилка требуют согласования до оффера.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="two-col">
+      <div class="card">
+        <h3 class="info">ИИ и современные инструменты</h3>
+        <p>Практический опыт: продакт-лид AI-агента для аналитиков в Сбере на базе ГигаЧата —
+        снимает «боль чистого листа» в исследовании процессов (−8 ч на проверку); корпоративный
+        контур — ГигаЧат/ГигаКод, личное использование — ChatGPT, Cursor (интервью 23.07.2026).
+        AI-инструмент на open-source моделях для расшифровки совещаний в Иннотехе.</p>
+      </div>
+      <div class="card">
+        <h3 class="info">Госслужба / формальная среда</h3>
+        <p>Опыта госслужбы нет — весь опыт кандидата (14 лет) в коммерческом секторе (банки,
+        ритейл, IT). Стартовая позиция — и.о. зам. начальника отдела. Потребуется пакет по 79-ФЗ:
+        справки о доходах и счетах, медицинская/наркологическая справки, отсутствие двойного
+        гражданства и невыезд в недружественные страны. Гражданство РФ (резюме).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Итоговое заключение</h2>
+    <div class="verdict">
+      <div class="score">91<sup>/100</sup></div>
+      <div class="verdict-table">
+        <div class="verdict-row"><div class="k">Рекомендация</div><div class="v">Рекомендую к следующему этапу по итогам профиля и HR-интервью</div></div>
+        <div class="verdict-row"><div class="k">Что проверить</div><div class="v">Грейд стартовой позиции против вилки 450–520К; мотивация к госструктуре при коммерческом бэкграунде</div></div>
+        <div class="verdict-row"><div class="k">Текущий статус на HH</div><div class="v">response — решение по переводу на следующий этап не зафиксировано в базе</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Источники. Резюме HH (resume_id 4631a79e0009259f0e0041ee86414969526243), заполненный
+    чек-лист HR-интервью «Пономарев М._чек-лист.pdf» (23.07.2026), карточка кандидата в дашборде
+    сравнения, транскрибация записи интервью 23.07.2026 (faster-whisper, офлайн), потолок ЗП по
+    роли РАЦ — из регламента вакансии (vacancy_id 134764878). Собрано 23.07.2026.
+  </footer>
+
+</div>
+</body>
+</html>

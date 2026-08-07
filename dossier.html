@@ -1,0 +1,918 @@
+<title>Досье кандидата · Черняховский Д.Г.</title>
+<style>
+  :root{
+    --bg:#08080d;
+    --surface:#131319;
+    --surface-2:#1b1b23;
+    --surface-3:#202029;
+    --border:#28282f;
+    --border-soft:#1e1e26;
+    --text:#f2f2f6;
+    --text-secondary:#a9a9b5;
+    --text-muted:#6c6c78;
+    --blue:#7db3ff;
+    --blue-soft:#3a4a66;
+    --green:#3fd897;
+    --green-bg:#0f2b21;
+    --green-border:#1e4636;
+    --amber:#f2b84b;
+    --amber-bg:#332409;
+    --amber-border:#4a3712;
+    --red:#f77c72;
+    --red-bg:#331414;
+    --red-border:#4a1f1f;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ background:var(--bg); }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--blue); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--blue); outline-offset:2px; }
+
+  .page{
+    max-width:880px;
+    margin:0 auto;
+    padding:56px 24px 80px;
+  }
+
+  /* ---------- Header ---------- */
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    color:var(--blue);
+    text-transform:uppercase;
+    margin:0 0 14px;
+  }
+  h1{
+    font-size:clamp(28px, 4vw, 38px);
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0 0 16px;
+    text-wrap:balance;
+  }
+  .lede{
+    color:var(--text-secondary);
+    font-size:15.5px;
+    max-width:68ch;
+    margin:0 0 28px;
+  }
+  .lede b{ color:var(--text); font-weight:600; }
+
+  .update-banner{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--blue);
+    border-radius:10px;
+    padding:14px 18px;
+    margin:0 0 32px;
+    font-size:14px;
+  }
+  .update-banner .tag{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--bg);
+    background:var(--blue);
+    padding:3px 9px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .update-banner span.body{ color:var(--text-secondary); }
+  .update-banner a{ font-weight:600; text-decoration:none; }
+  .update-banner a:hover{ text-decoration:underline; }
+
+  /* ---------- KPI tiles ---------- */
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:12px;
+    margin:0 0 20px;
+  }
+  .kpi{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:0;
+  }
+  .kpi.wide{ grid-column:span 3; }
+  .kpi.narrow{ grid-column:span 2; }
+  .kpi-label{
+    font-size:12px;
+    color:var(--text-muted);
+    letter-spacing:0.01em;
+  }
+  .kpi-value{
+    font-size:17px;
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+  }
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .pill.good{ background:var(--green-bg); color:var(--green); border:1px solid var(--green-border); }
+  .pill.neutral{
+    background:var(--surface-3); color:var(--text); border:1px solid var(--border);
+    font-family:var(--font-mono); font-size:12.5px;
+  }
+
+  @media (max-width:640px){
+    .kpi-grid{ grid-template-columns:repeat(2,1fr); }
+    .kpi.wide, .kpi.narrow{ grid-column:span 2; }
+  }
+
+  /* ---------- Callouts ---------- */
+  .callout{
+    border-radius:12px;
+    padding:18px 20px;
+    margin:4px 0 40px;
+    font-size:14.5px;
+    line-height:1.6;
+  }
+  .callout.warn{
+    background:var(--amber-bg);
+    border:1px solid var(--amber-border);
+    color:#e8cf9d;
+  }
+  .callout.info{
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    color:var(--text-secondary);
+  }
+  .callout-title{
+    font-weight:700;
+    color:var(--text);
+    margin:0 0 6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .callout.warn .callout-title{ color:var(--amber); }
+  .callout-source{
+    margin-top:12px;
+    font-size:12.5px;
+    color:var(--text-muted);
+  }
+
+  /* ---------- Sections ---------- */
+  section{ margin:0 0 44px; }
+  .section-head{
+    border-bottom:1px solid var(--border-soft);
+    padding-bottom:12px;
+    margin-bottom:20px;
+  }
+  h2{
+    font-size:19px;
+    font-weight:700;
+    margin:0 0 4px;
+    letter-spacing:-0.005em;
+  }
+  .section-sub{
+    font-size:13.5px;
+    color:var(--text-muted);
+    margin:0;
+  }
+
+  /* ---------- Criteria grid ---------- */
+  .criteria-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:10px;
+  }
+  .criterion{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 10px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+  .criterion-label{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--text-muted);
+    text-transform:uppercase;
+  }
+  .status-dot{
+    width:34px; height:34px;
+    border-radius:999px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:800;
+  }
+  .status-dot.good{ background:var(--green-bg); color:var(--green); border:1px solid var(--green-border); }
+  .status-dot.mixed{ background:var(--amber-bg); color:var(--amber); border:1px solid var(--amber-border); }
+  .criterion-status{ font-size:13px; font-weight:600; }
+  .criterion-status.good{ color:var(--green); }
+  .criterion-status.mixed{ color:var(--amber); }
+  .criterion-score{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-secondary);
+  }
+
+  @media (max-width:720px){
+    .criteria-grid{ grid-template-columns:repeat(3,1fr); }
+  }
+  @media (max-width:420px){
+    .criteria-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline{ position:relative; padding-left:26px; }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:5px; top:6px; bottom:6px;
+    width:2px;
+    background:var(--border);
+  }
+  .tl-item{ position:relative; padding-bottom:26px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-dot{
+    position:absolute; left:-26px; top:5px;
+    width:11px; height:11px; border-radius:999px;
+    background:var(--blue);
+    box-shadow:0 0 0 3px var(--bg);
+  }
+  .tl-gap{
+    position:relative;
+    padding:2px 0 20px;
+    font-size:12.5px;
+    font-style:italic;
+    color:var(--text-muted);
+  }
+  .tl-date{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:4px;
+  }
+  .tl-role{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .tl-role .company{ color:var(--blue); }
+  .tl-desc{
+    font-size:14px;
+    color:var(--text-secondary);
+    max-width:64ch;
+  }
+
+  /* ---------- Salary bar ---------- */
+  .salary-row{
+    display:flex; align-items:center; gap:16px;
+    margin-bottom:10px;
+  }
+  .salary-figure{
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:16px;
+    white-space:nowrap;
+  }
+  .salary-track{
+    position:relative;
+    flex:1;
+    height:14px;
+    background:var(--surface-3);
+    border-radius:999px;
+    overflow:visible;
+  }
+  .salary-fill{
+    position:absolute; left:0; top:0; bottom:0;
+    width:50%;
+    background:linear-gradient(90deg, #1c8f63, var(--green));
+    border-radius:999px;
+  }
+  .salary-ceiling{
+    position:absolute;
+    left:83.3%;
+    top:-10px; bottom:-10px;
+    width:2px;
+    background:var(--red);
+  }
+  .salary-ceiling-label{
+    position:absolute;
+    left:83.3%;
+    top:-28px;
+    transform:translateX(-50%);
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--red);
+    white-space:nowrap;
+  }
+  .salary-status{
+    font-size:13px; font-weight:700; color:var(--green);
+    white-space:nowrap;
+  }
+  .salary-note{
+    font-size:13.5px;
+    color:var(--text-secondary);
+    margin-top:18px;
+  }
+
+  /* ---------- Quotes ---------- */
+  .quote{
+    border-left:3px solid var(--blue-soft);
+    background:var(--surface);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;
+    margin-bottom:14px;
+    font-size:14.5px;
+    font-style:italic;
+    color:var(--text);
+  }
+  .quote:last-child{ margin-bottom:0; }
+  .quote-cite{
+    display:block;
+    margin-top:8px;
+    font-style:normal;
+    font-size:12px;
+    color:var(--text-muted);
+  }
+
+  /* ---------- Assessment subsections ---------- */
+  .assess-block{ margin-bottom:22px; }
+  .assess-block:last-child{ margin-bottom:0; }
+  .assess-title{
+    font-size:12.5px;
+    font-weight:800;
+    letter-spacing:0.04em;
+    margin:0 0 8px;
+  }
+  .assess-title.good{ color:var(--green); }
+  .assess-title.risk{ color:var(--amber); }
+  .assess-title.neutral{ color:var(--blue); }
+  .assess-text{
+    font-size:14.5px;
+    color:var(--text-secondary);
+    margin:0;
+  }
+  .assess-text b{ color:var(--text); font-weight:600; }
+
+  /* ---------- Conclusion table ---------- */
+  .kv{
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .kv-row{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:20px;
+    padding:16px 20px;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .kv-row:last-child{ border-bottom:none; }
+  .kv-row dt{
+    font-size:13px;
+    color:var(--text-muted);
+    font-weight:600;
+  }
+  .kv-row dd{
+    margin:0;
+    font-size:14.5px;
+    color:var(--text-secondary);
+  }
+  .kv-row dd .score{
+    font-size:22px;
+    font-weight:800;
+    color:var(--text);
+    font-family:var(--font-mono);
+  }
+  .kv-row dd .score-tag{
+    display:block;
+    font-family:var(--font-body);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.03em;
+    color:var(--green);
+    margin-top:2px;
+  }
+  @media (max-width:560px){
+    .kv-row{ grid-template-columns:1fr; gap:4px; }
+  }
+
+  /* ---------- Update section ---------- */
+  .update-section{
+    border:1px solid var(--blue-soft);
+    border-radius:14px;
+    padding:28px;
+    background:linear-gradient(180deg, rgba(125,179,255,0.05), transparent 60%), var(--surface);
+  }
+  .update-section .section-head{ border-bottom-color:var(--blue-soft); }
+  .update-meta{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:6px;
+  }
+  .update-date{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--blue);
+    background:rgba(125,179,255,0.1);
+    border:1px solid var(--blue-soft);
+    padding:3px 10px;
+    border-radius:999px;
+  }
+  .update-summary{
+    font-size:15px;
+    color:var(--text);
+    background:var(--surface-2);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:26px;
+  }
+  .update-summary .role-tag{
+    display:inline-block;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--blue);
+    background:rgba(125,179,255,0.12);
+    border:1px solid var(--blue-soft);
+    padding:2px 9px;
+    border-radius:6px;
+    margin:0 2px;
+  }
+  h3{
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 12px;
+    color:var(--text-secondary);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .reason-list, .risk-list{
+    list-style:none;
+    margin:0 0 28px;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .reason-list:last-child, .risk-list:last-child{ margin-bottom:0; }
+  .reason-item, .risk-item{
+    display:flex;
+    gap:12px;
+    background:var(--surface-2);
+    border:1px solid var(--border-soft);
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:var(--text-secondary);
+  }
+  .reason-item .num{
+    font-family:var(--font-mono);
+    color:var(--text-muted);
+    flex-shrink:0;
+  }
+  .risk-item{ border-left:3px solid var(--amber-border); }
+  .risk-item .risk-name{
+    display:block;
+    font-weight:700;
+    color:var(--amber);
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    margin-bottom:3px;
+  }
+  .update-conclusion{
+    background:var(--green-bg);
+    border:1px solid var(--green-border);
+    border-radius:10px;
+    padding:16px 18px;
+    font-size:14.5px;
+    color:#cdeee0;
+  }
+  .update-conclusion .callout-title{ color:var(--green); }
+
+  /* ---------- Footer / sources ---------- */
+  .sources{
+    margin-top:48px;
+    padding-top:20px;
+    border-top:1px solid var(--border-soft);
+    font-size:12.5px;
+    color:var(--text-muted);
+    line-height:1.7;
+  }
+  .sources b{ color:var(--text-secondary); }
+  .sources + .sources{ margin-top:10px; padding-top:0; border-top:none; }
+</style>
+
+<div class="page">
+
+  <p class="eyebrow">Досье кандидата · Архитектор данных и аналитических платформ</p>
+  <h1>Черняховский Денис Григорьевич</h1>
+  <p class="lede">
+    Senior Data Engineer — данные из полного досье (резюме HH + чек-лист HR-интервью 07.07.2026 +
+    локальная база воронки hiring.db). Резюме указывает написание фамилии «<b>Черняховский</b>» (почта, ФИО),
+    в файле чек-листа опечатка — «Черняковский».
+  </p>
+
+  <div class="update-banner">
+    <span class="tag">Обновлено 06.08.2026</span>
+    <span class="body">Добавлена справка по итогам повторного собеседования — см. раздел
+      «<a href="#update">Обновление · Итоги повторного собеседования</a>» внизу страницы.</span>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi wide">
+      <span class="kpi-label">Балл (интервью)</span>
+      <span class="pill good">≈96 / 100 · сильно рекомендую</span>
+    </div>
+    <div class="kpi wide">
+      <span class="kpi-label">ЗП в вилке</span>
+      <span class="pill good">Да, с запасом</span>
+    </div>
+    <div class="kpi narrow">
+      <span class="kpi-label">Статус на HH</span>
+      <span class="pill neutral">consider</span>
+    </div>
+    <div class="kpi narrow">
+      <span class="kpi-label">Возраст</span>
+      <span class="kpi-value">32</span>
+    </div>
+    <div class="kpi narrow">
+      <span class="kpi-label">Стаж (резюме)</span>
+      <span class="kpi-value">11 лет 6 мес.</span>
+    </div>
+    <div class="kpi narrow">
+      <span class="kpi-label">Гражданство</span>
+      <span class="kpi-value">РФ</span>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <p class="callout-title">⚠ Расхождение внутри самого чек-листа</p>
+    <p style="margin:0">
+      Пункт «Осознанная мотивация именно к этой позиции, не только к зарплате» отмечен максимальным баллом —
+      5/5. При этом письменный комментарий интервьюера начинается со слов: «Нет мотивации именно к этой позиции,
+      не до конца решил готов ли сменить работу». Это прямое противоречие внутри одного документа, не между
+      разными этапами — оценка по чек-листу и свободный комментарий расходятся. Отдельно: для роли «Архитектор»
+      формализованного тестового задания пока не существует (открытая задача по регламенту вакансии), поэтому
+      интервью — единственный источник оценки, тест не проводился.
+    </p>
+    <p class="callout-source">Источники: заполненный чек-лист HR-интервью, 07.07.2026 (блок Б, пункт 1, и раздел «Ваш комментарий»).</p>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <h2>Профиль по 6 критериям</h2>
+      <p class="section-sub">Свод по чек-листу HR-интервью (07.07.2026) и резюме.</p>
+    </div>
+    <div class="criteria-grid">
+      <div class="criterion">
+        <span class="criterion-label">Опыт</span>
+        <span class="status-dot good">✓</span>
+        <span class="criterion-status good">Сильно</span>
+        <span class="criterion-score">4.8/5</span>
+      </div>
+      <div class="criterion">
+        <span class="criterion-label">Мотивация</span>
+        <span class="status-dot mixed">~</span>
+        <span class="criterion-status mixed">Противоречиво</span>
+        <span class="criterion-score">чек-бокс 5/5</span>
+      </div>
+      <div class="criterion">
+        <span class="criterion-label">Культ. fit</span>
+        <span class="status-dot good">✓</span>
+        <span class="criterion-status good">Сильно</span>
+        <span class="criterion-score">4.6/5</span>
+      </div>
+      <div class="criterion">
+        <span class="criterion-label">ИИ</span>
+        <span class="status-dot good">✓</span>
+        <span class="criterion-status good">Сильно</span>
+        <span class="criterion-score">Codex, Claude</span>
+      </div>
+      <div class="criterion">
+        <span class="criterion-label">Гос-среда</span>
+        <span class="status-dot mixed">~</span>
+        <span class="criterion-status mixed">Частично</span>
+        <span class="criterion-score">4/5</span>
+      </div>
+      <div class="criterion">
+        <span class="criterion-label">ЗП в вилке</span>
+        <span class="status-dot good">✓</span>
+        <span class="criterion-status good">Сильно</span>
+        <span class="criterion-score">300К/500К</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Карьерная траектория</h2>
+      <p class="section-sub">Резюме HH, общий стаж 11 лет 6 мес. (138 мес.).</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-date">Мар 2023 – наст. время · 3 г. 4 мес.</div>
+        <div class="tl-role">АНО «Цифровая трансформация» — <span class="company">Data Engineer</span></div>
+        <p class="tl-desc">
+          Спроектировал и построил Data Platform с нуля (DWH как единый источник для 10+ систем).
+          Рефакторинг legacy-интеграции: bash + PostgreSQL → Airflow + PostgreSQL + ClickHouse (снижение
+          Data Latency в 5 раз). 100+ пайплайнов в Airflow, потоковая Kafka → ClickHouse, миграция с NiFi.
+          Фреймворк Data Quality с алертингом (реакция на аномалии — с часов до 5–10 минут). Найм и
+          менторство команды из 2 дата-инженеров и 2 аналитиков.
+        </p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-date">Ноя 2021 – Фев 2023 · 1 г. 3 мес.</div>
+        <div class="tl-role">РОСБАНК — <span class="company">Data Quality Engineer</span></div>
+        <p class="tl-desc">
+          Моделирование DWH/DM (Data Vault, 3NF, star-schema). Формализация Data Quality Policy / Data SLA,
+          внедрение data quality checks для витрин и слоёв DWH.
+        </p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-date">Мар 2020 – Окт 2021 · 1 г. 7 мес.</div>
+        <div class="tl-role">ЦУМ, ТД — <span class="company">SRE-инженер</span></div>
+        <p class="tl-desc">
+          Отказоустойчивость микросервисов (Kubernetes, Docker, Helm), мониторинг (Prometheus, Grafana, Loki),
+          CI/CD на GitLab CI, стратегии деплоя blue-green/canary.
+        </p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-date">Авг 2018 – Мар 2020 · 1 г. 7 мес.</div>
+        <div class="tl-role">Teachbase — <span class="company">Инженер техподдержки 2 линии</span></div>
+        <p class="tl-desc">
+          Диагностика инцидентов на уровне приложений, API и БД; тестирование REST API (Swagger/Postman);
+          скрипты на Python для автоматизации.
+        </p>
+      </div>
+      <div class="tl-gap">— перерыв в резюме ≈ 1 г. 2 мес. (июль 2017 – июль 2018), причина не указана —</div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-date">Янв 2014 – Июн 2017 · 3 г. 5 мес.</div>
+        <div class="tl-role">АО «КБП», Тула — <span class="company">Инженер</span></div>
+        <p class="tl-desc">
+          Эскизные и рабочие проекты приборостроения, кинематические схемы, технические расчёты. Опыт вне
+          data-стека — ранняя карьера по специальности «Приборостроение».
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Зарплатные ожидания</h2>
+      <p class="section-sub">Потолок вилки по вакансии «Архитектор» — 500 000 ₽ gross.</p>
+    </div>
+    <div class="salary-row">
+      <span class="salary-figure">300 000 ₽</span>
+      <div class="salary-track">
+        <div class="salary-fill"></div>
+        <div class="salary-ceiling"></div>
+        <div class="salary-ceiling-label">потолок 500К</div>
+      </div>
+      <span class="salary-status">в вилке ✓</span>
+    </div>
+    <p class="salary-note">
+      Цифра указана самим кандидатом в поле «Желаемая ЗП» резюме HH. Ответ на отдельный salary-gate вопрос,
+      отправленный в чат HH 02.07.2026, в базе не зафиксирован — но собственная заявка в резюме уже даёт
+      нужный ориентир и укладывается в вилку с запасом.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Что записано дословно</h2>
+      <p class="section-sub">Источник — заполненный чек-лист и data/hiring.db, без изменений формулировок.</p>
+    </div>
+    <div class="quote">
+      «Нет мотивации именно к этой позиции, не до конца решил готов ли сменить работу. Слабее основных…»
+      <span class="quote-cite">— комментарий интервьюера, чек-лист HR-интервью, 07.07.2026 (фраза обрывается в исходном документе)</span>
+    </div>
+    <div class="quote">
+      «Из основных плюсов мотивация не материальная, интересен масштаб проекта. Опыт создания базы данных
+      с нуля. Активное применение моделей ИИ: Codex, Claude. Данный кандидат готов к очному ознакомлению
+      и проведению практического погружения.»
+      <span class="quote-cite">— комментарий интервьюера, чек-лист HR-интервью, 07.07.2026</span>
+    </div>
+    <div class="quote">
+      «Ожидает 2 этап — собеседование с Плаксиным Д.А. (уточнено 09.07.2026)»
+      <span class="quote-cite">— applications.decision_note, data/hiring.db</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Оценка — сильные и слабые стороны</h2>
+      <p class="section-sub">Свод по чек-листу и резюме, дословно из источников выше — без сглаживания расхождений.</p>
+    </div>
+
+    <div class="assess-block">
+      <p class="assess-title good">Сильные стороны</p>
+      <p class="assess-text">
+        Построил Data Platform с нуля, крупный самостоятельный трек: миграция legacy-стека на Airflow +
+        ClickHouse, 100+ пайплайнов, фреймворк Data Quality с алертингом. Опыт найма и менторства команды
+        (2 инженера + 2 аналитика). Интервьюер отметил структурированность, конкретные примеры и системное
+        мышление (блок А — 4.8/5).
+      </p>
+    </div>
+
+    <div class="assess-block">
+      <p class="assess-title risk">Слабые стороны / риски</p>
+      <p class="assess-text">
+        Главный риск — мотивационный: письменный комментарий интервьюера прямо указывает на неопределённость
+        («не до конца решил готов ли сменить работу»), что расходится с максимальной оценкой этого же пункта
+        по чек-боксам (см. расхождение выше). Тестового задания по роли «Архитектор» не существует — оценка
+        построена только на одном интервью. В резюме — незакрытый перерыв ≈14 месяцев (2017–2018).
+      </p>
+    </div>
+
+    <div class="assess-block">
+      <p class="assess-title neutral">ИИ и современные инструменты</p>
+      <p class="assess-text">
+        По комментарию интервьюера — «активное применение моделей ИИ: Codex, Claude» в рабочих задачах.
+        В резюме отдельно указан профиль на leetcode.com, что указывает на практику в алгоритмической
+        подготовке.
+      </p>
+    </div>
+
+    <div class="assess-block">
+      <p class="assess-title neutral">Госслужба / формальная среда</p>
+      <p class="assess-text">
+        Прямого опыта госслужбы нет. Текущее место — АНО (некоммерческая организация в сфере цифровой
+        трансформации), ранний опыт (2014–2017) — АО «КБП», Тула, оборонное КБ с регламентированной
+        проектной средой. Гражданство РФ подтверждено (резюме). Интервьюер оценил «стиль работы гос.
+        структуры» и «взаимодействие с высоким руководством» на 4/5 — не максимум, но и не отмечено как
+        стоп-фактор.
+      </p>
+    </div>
+
+    <div class="assess-block">
+      <p class="assess-title neutral">Как читать это досье</p>
+      <p class="assess-text">
+        Оценка построена на одном источнике (интервью 07.07.2026), а не на тесте и интервью, как у других
+        кандидатов на другие роли — тестового задания для «Архитектора» пока не существует. Внутри самого
+        источника есть заметное противоречие между баллом и текстом комментария — его стоит уточнить у
+        интервьюера напрямую перед вторым этапом.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Итоговое заключение</h2>
+    </div>
+    <dl class="kv">
+      <div class="kv-row">
+        <dt>Балл</dt>
+        <dd>
+          <span class="score">≈96 / 100</span>
+          <span class="score-tag">Интервью · сильно рекомендую</span>
+        </dd>
+      </div>
+      <div class="kv-row">
+        <dt>Что проверить</dt>
+        <dd>
+          Реальную мотивацию к смене работы именно на эту позицию (расхождение чек-бокса и комментария);
+          причину перерыва в резюме 2017–2018; тестовое задание для роли пока не составлено — если
+          требуется, это отдельная открытая задача.
+        </dd>
+      </div>
+      <div class="kv-row">
+        <dt>Текущий статус на HH</dt>
+        <dd>
+          consider — ожидает 2 этап, собеседование с Плаксиным Д.А. (уточнено 09.07.2026). Резюме в
+          какой-то момент было удалено с HH (change_collection вернул 403 resume_not_found 02.07.2026), но
+          диалог в чате продолжился напрямую.
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <p class="sources">
+    <b>Источники.</b> Резюме HH (resume_id cae2806d00104ecbbf0041ee866d30546d4f39), заполненный чек-лист
+    HR-интервью «Чеклист_оценки_Черняковский ДГ.docx» (07.07.2026), data/hiring.db → applications,
+    activity_log (vacancy_id 134544725, роль «Архитектор данных и аналитических платформ»). Собрано 23.07.2026.
+  </p>
+
+  <!-- ============ UPDATE: second-interview report from docx ============ -->
+  <section class="update-section" id="update" style="margin-top:48px">
+    <div class="section-head">
+      <div class="update-meta">
+        <span class="update-date">06.08.2026</span>
+      </div>
+      <h2>Обновление · Итоги повторного собеседования</h2>
+      <p class="section-sub">
+        Справка интервьюера по итогам очередного этапа общения с кандидатом — датирована позже чек-листа
+        07.07.2026 и приходится на период ожидания «2 этапа» (собеседование с Плаксиным Д.А.), упомянутый
+        выше в «Итоговом заключении».
+      </p>
+    </div>
+
+    <div class="update-summary">
+      Технический уровень кандидата соответствует ожиданиям. По внутренним критериям интервьюер оценивает
+      его как <span class="role-tag">заместителя начальника отдела · консультанта</span>. Кандидат подходит
+      на роль <span class="role-tag">архитектора данных</span> либо сотрудника
+      <span class="role-tag">отдела анализа больших данных</span>.
+    </div>
+
+    <h3>Причины смены мест работы (по пояснениям кандидата)</h3>
+    <ul class="reason-list">
+      <li class="reason-item">
+        <span class="num">01</span>
+        <span>Начинал по базовой инженерной специальности; ушёл из-за низкой оплаты труда, переехал в Москву.</span>
+      </li>
+      <li class="reason-item">
+        <span class="num">02</span>
+        <span>Из Росбанка ушёл в связи со сменой собственника и последующим сокращением ИТ-персонала — обстоятельство внешнее.</span>
+      </li>
+      <li class="reason-item">
+        <span class="num">03</span>
+        <span>
+          С предпоследнего места уволен по итогам конфликта: не оплачивались переработки, требовали
+          задерживаться и выходить в нерабочее время. При очередном требовании в состоянии перегрузки
+          допустил в адрес вышестоящего руководства ненормативную лексику; информация была доведена до
+          руководителя организации.
+        </span>
+      </li>
+    </ul>
+
+    <h3>Риски</h3>
+    <ul class="risk-list">
+      <li class="risk-item">
+        <span>
+          <span class="risk-name">Управленческий опыт</span>
+          В подчинении было 4 человека, но системного опыта руководства нет.
+        </span>
+      </li>
+      <li class="risk-item">
+        <span>
+          <span class="risk-name">Коммуникация</span>
+          Ярко выраженный интроверт, по итогам беседы видны затруднения в общении с людьми.
+        </span>
+      </li>
+      <li class="risk-item">
+        <span>
+          <span class="risk-name">Конфликтность и стрессоустойчивость</span>
+          Эпизод с нарушением норм делового общения в адрес руководства.
+        </span>
+      </li>
+      <li class="risk-item">
+        <span>
+          <span class="risk-name">Режим работы</span>
+          В первую очередь интересовался наличием переработок и порядком их оплаты. Есть риск, что не
+          выдержит наш темп.
+        </span>
+      </li>
+      <li class="risk-item">
+        <span>
+          <span class="risk-name">Вознаграждение</span>
+          Ожидания 300–350 тыс. руб./мес.
+        </span>
+      </li>
+    </ul>
+
+    <div class="update-conclusion">
+      <p class="callout-title">Вывод</p>
+      <p style="margin:0">
+        Сотрудник грамотный, рекомендую к найму на позицию архитектора данных или консультанта/заместителя
+        начальника отдела. В кадровый резерв на должность начальника отдела в обозримой перспективе не
+        рассматриваю — по совокупности изложенных выше причин. На этапе оффера считаю необходимым отдельно
+        проговорить режим работы, порядок компенсации переработок и требования к деловой коммуникации.
+      </p>
+    </div>
+  </section>
+
+  <p class="sources">
+    <b>Источник обновления.</b> «Справка по итогам собеседования» — Черняховский Д.Г., Data Engineer,
+    06.08.2026 (загруженный .docx).
+  </p>
+
+</div>

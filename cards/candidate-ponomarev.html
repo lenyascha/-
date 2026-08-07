@@ -52,6 +52,49 @@
     padding:10px 18px; margin-bottom:6px;
   }
   .framed-title h2 { margin-bottom:0; }
+
+  .update-card {
+    background:#12151f; border:1px solid #232838; border-radius:16px; padding:28px;
+  }
+  .update-date-pill {
+    display:inline-block; background:#1b2338; border:1px solid #2c3a5e;
+    color:#8fb4ff; font-family:"SFMono-Regular", Consolas, monospace;
+    font-size:12.5px; padding:6px 14px; border-radius:999px; margin-bottom:16px;
+  }
+  .update-title { font-size:19px; font-weight:700; margin-bottom:10px; }
+  .update-desc { color:#9096a5; font-size:13.5px; line-height:1.6; margin-bottom:20px; }
+  .update-highlight {
+    background:#0d0f1a; border:1px solid #232838; border-radius:12px;
+    padding:20px 22px; font-size:15px; line-height:1.85; color:#e7e9ee; margin-bottom:26px;
+  }
+  .pill-tag {
+    display:inline-block; background:#1b2848; color:#7fb0ff;
+    padding:3px 10px; border-radius:999px; font-size:13.5px; font-weight:600;
+  }
+  .update-label {
+    color:#8b92a3; font-size:12px; letter-spacing:0.5px; text-transform:uppercase;
+    font-weight:700; margin-bottom:14px;
+  }
+  .numbered-list { display:flex; flex-direction:column; gap:12px; margin-bottom:22px; }
+  .numbered-item {
+    display:flex; gap:16px; background:#0d0f1a; border:1px solid #1c2130;
+    border-radius:12px; padding:16px 18px;
+  }
+  .numbered-item .num { color:#5c6274; font-size:13px; font-weight:700; min-width:22px; }
+  .numbered-item .text { font-size:14px; line-height:1.6; color:#d3d6de; }
+
+  .notice-box {
+    background:#12151f; border:1px solid #232838; border-radius:12px;
+    padding:18px 22px; margin-bottom:28px;
+  }
+  .notice-pill {
+    display:inline-flex; align-items:center; gap:8px; background:#1b2338;
+    border:1px solid #2c3a5e; color:#8fb4ff; font-size:13px; font-weight:700;
+    padding:6px 14px; border-radius:999px; margin-bottom:12px;
+  }
+  .notice-pill::before { content:''; width:8px; height:8px; border-radius:50%; background:#5aa2ff; }
+  .notice-box p { color:#aeb3c0; font-size:14px; line-height:1.6; }
+  .notice-box strong { color:#e7e9ee; }
   .section-note { color:#8b92a3; font-size:13.5px; margin-bottom:18px; }
 
   .criteria-grid {
@@ -145,6 +188,12 @@
     Лидер аналитики данных, Москва — данные из полного досье (резюме HH + чек-лист HR-интервью
     23.07.2026 + карточка в дашборде сравнения кандидатов + транскрибация интервью 23.07.2026).
   </p>
+
+  <div class="notice-box">
+    <div class="notice-pill">Обновлено 07.08.2026</div>
+    <p>Добавлена справка по итогам собеседования с Бабиновым С.С. — см. раздел
+    «<strong>Обновление · Итоги собеседования с Бабиновым С.С.</strong>» внизу страницы.</p>
+  </div>
 
   <div class="stat-row">
     <div class="stat-box"><div class="label">Балл</div><div class="value">91 / 100</div></div>
@@ -331,32 +380,38 @@
   </section>
 
   <section>
-    <div class="framed-title"><h2>Итоги собеседования с Заместителем начальника инспекции Боим А.Ю.</h2></div>
-    <p class="section-note">
-      Кандидат предложил гипотезы о факторах роста долга + визуал в Power BI.
-    </p>
-    <div class="two-col">
-      <div class="card strengths">
-        <h3>Подтверждено ранее</h3>
-        <p>Часть предложенных гипотез — доля долга в доходах, дисбаланс ДЗ и КЗ, рост ФОТ при
-        падении выручки, рост налоговой нагрузки и пр. — проверены и также подтверждены нами
-        ранее.</p>
+    <div class="update-card">
+      <div class="update-date-pill">07.08.2026</div>
+      <div class="update-title">Обновление · Итоги собеседования с Бабиновым С.С.</div>
+      <p class="update-desc">
+        Отзыв заместителя начальника инспекции по итогам тестового задания — датирован позже
+        интервью 23.07.2026 и относится к дополнительному этапу оценки кандидата.
+      </p>
+      <div class="update-highlight">
+        Кандидат предложил гипотезы о факторах роста долга и визуализацию в
+        <span class="pill-tag">Power BI</span>. Часть гипотез — <span class="pill-tag">доля долга в доходах</span>,
+        <span class="pill-tag">дисбаланс ДЗ и КЗ</span>, <span class="pill-tag">рост ФОТ при падении выручки</span>,
+        <span class="pill-tag">рост налоговой нагрузки</span> — уже проверена и подтверждена нами ранее.
       </div>
-      <div class="card">
-        <h3 class="info">Новое / интересное</h3>
-        <p>Выявил компании с риском искусственного занижения налоговой базы (налоговая нагрузка
-        динамично снижается к 0, при этом выручка остаётся высокой). Из положительного —
-        системность мышления, понимание того, что эти гипотезы надо проверять регулярно и
-        реагировать на сработавшие алерты.</p>
+      <div class="update-label">Наблюдения по тестовому заданию</div>
+      <div class="numbered-list">
+        <div class="numbered-item">
+          <div class="num">01</div>
+          <div class="text">Выявил компании с риском искусственного занижения налоговой базы —
+          налоговая нагрузка динамично снижается к нулю, при этом выручка остаётся высокой.</div>
+        </div>
+        <div class="numbered-item">
+          <div class="num">02</div>
+          <div class="text">Системность мышления: понимает, что гипотезы нужно проверять
+          регулярно и реагировать на сработавшие алерты.</div>
+        </div>
+        <div class="numbered-item">
+          <div class="num">03</div>
+          <div class="text">Явного негатива нет. Часть гипотез (например, рост долга как
+          негативный фактор в банкротстве) слишком очевидна, но это нормально при отсутствии
+          глубокого погружения кандидата в предмет.</div>
+        </div>
       </div>
-    </div>
-    <div class="callout" style="border-color:#232838; background:#12151f;">
-      Явного негатива нет. Некоторые из гипотез слишком очевидны (например, рост долга в
-      банкротстве как негативный фактор), но это нормально, учитывая, что у кандидата не было
-      глубокого погружения в предмет.
-    </div>
-    <div class="stat-box" style="max-width:360px;">
-      <div class="label">Итог по тестовому заданию</div>
       <div class="badge green">✓ Предлагаю рассмотреть для трудоустройства</div>
     </div>
   </section>

@@ -28,6 +28,7 @@ body { background:#111; }
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
   background: #050716;
+  margin-bottom: 40px;
 }
 .dot-grid {
   position: absolute;
@@ -133,7 +134,7 @@ body { background:#111; }
   top: 388px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 70px;
   display: flex;
   z-index: 2;
 }
@@ -245,6 +246,41 @@ body { background:#111; }
 }
 .col:nth-child(3) .beam { background: linear-gradient(180deg, rgba(58,176,245,0) 0%, rgba(58,176,245,0.85) 88%, #b6e6ff 100%); }
 
+.columns.cols-7 .col { position: relative; }
+.columns.cols-7 .col:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 0;
+  bottom: -46px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(110,150,255,0), rgba(110,150,255,0.35) 30%, rgba(110,150,255,0.35) 70%, rgba(110,150,255,0));
+  z-index: 0;
+}
+.columns.cols-7 .circle { width: 176px; height: 176px; }
+.columns.cols-7 .circle .icon { width: 66px; height: 66px; }
+.columns.cols-7 .caption { margin-top: 32px; font-size: 19px; line-height: 1.45; max-width: 232px; }
+.columns.cols-7 .connector { height: 118px; }
+.columns.cols-7 .connector .beam { width: 40px; height: 118px; }
+.columns.cols-7 .connector .ring.r1 { width: 34px; height: 34px; bottom: -17px; }
+.columns.cols-7 .connector .ring.r2 { width: 60px; height: 60px; bottom: -30px; }
+.columns.cols-7 .connector .dot { width: 14px; height: 14px; bottom: -7px; }
+
+.columns.cols-7 .col:nth-child(1) { --beam-core:#c76bf0; --beam-mid:rgba(199,107,240,0.5); --beam-dim:rgba(199,107,240,0.22); --beam-glow:rgba(199,107,240,0.6); }
+.columns.cols-7 .col:nth-child(1) .beam { background: linear-gradient(180deg, rgba(199,107,240,0) 0%, rgba(199,107,240,0.85) 88%, #e2b6ff 100%); }
+.columns.cols-7 .col:nth-child(2) { --beam-core:#a86bf2; --beam-mid:rgba(168,107,242,0.5); --beam-dim:rgba(168,107,242,0.22); --beam-glow:rgba(168,107,242,0.6); }
+.columns.cols-7 .col:nth-child(2) .beam { background: linear-gradient(180deg, rgba(168,107,242,0) 0%, rgba(168,107,242,0.85) 88%, #d9baf9 100%); }
+.columns.cols-7 .col:nth-child(3) { --beam-core:#8a6ef4; --beam-mid:rgba(138,110,244,0.5); --beam-dim:rgba(138,110,244,0.22); --beam-glow:rgba(138,110,244,0.6); }
+.columns.cols-7 .col:nth-child(3) .beam { background: linear-gradient(180deg, rgba(138,110,244,0) 0%, rgba(138,110,244,0.85) 88%, #cdbdfb 100%); }
+.columns.cols-7 .col:nth-child(4) { --beam-core:#6f6cf0; --beam-mid:rgba(111,108,240,0.5); --beam-dim:rgba(111,108,240,0.22); --beam-glow:rgba(111,108,240,0.6); }
+.columns.cols-7 .col:nth-child(4) .beam { background: linear-gradient(180deg, rgba(111,108,240,0) 0%, rgba(111,108,240,0.85) 88%, #c3c0ff 100%); }
+.columns.cols-7 .col:nth-child(5) { --beam-core:#5590f2; --beam-mid:rgba(85,144,242,0.5); --beam-dim:rgba(85,144,242,0.22); --beam-glow:rgba(85,144,242,0.6); }
+.columns.cols-7 .col:nth-child(5) .beam { background: linear-gradient(180deg, rgba(85,144,242,0) 0%, rgba(85,144,242,0.85) 88%, #b9d0fb 100%); }
+.columns.cols-7 .col:nth-child(6) { --beam-core:#3ab0f5; --beam-mid:rgba(58,176,245,0.5); --beam-dim:rgba(58,176,245,0.22); --beam-glow:rgba(58,176,245,0.6); }
+.columns.cols-7 .col:nth-child(6) .beam { background: linear-gradient(180deg, rgba(58,176,245,0) 0%, rgba(58,176,245,0.85) 88%, #b6e6ff 100%); }
+.columns.cols-7 .col:nth-child(7) { --beam-core:#2fd0e0; --beam-mid:rgba(47,208,224,0.5); --beam-dim:rgba(47,208,224,0.22); --beam-glow:rgba(47,208,224,0.6); }
+.columns.cols-7 .col:nth-child(7) .beam { background: linear-gradient(180deg, rgba(47,208,224,0) 0%, rgba(47,208,224,0.85) 88%, #b0f2ee 100%); }
+
 .icon {
   stroke: #ffffff;
   stroke-width: 1.5;
@@ -325,9 +361,17 @@ svg.defs { position:absolute; width:0; height:0; }
     <path d="M162 40V26M170 40V20M178 40V32" stroke="#5fa8ff" stroke-width="2.2"/>
   </g>
 </symbol>
+
+<symbol id="icon-alert-triangle" viewBox="0 0 24 24"><path d="M12 3.2l10 17.8H2L12 3.2z"/><path d="M12 10.2v4"/><circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="2.7"/><path d="M4 5.5V18c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7V5.5"/><path d="M4 11.8c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7"/></symbol>
+<symbol id="icon-checklist" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M7.5 9.2l1.6 1.6L12.5 7.2M7.5 15h9"/></symbol>
+<symbol id="icon-scale" viewBox="0 0 24 24"><path d="M12 3v18M6 22h12"/><path d="M3 6.5h18"/><path d="M6 6.5l3 4.3H3l3-4.3z"/><path d="M18 6.5l3 4.3h-6l3-4.3z"/><path d="M3 10.8a3 3 0 006 0M15 10.8a3 3 0 006 0"/></symbol>
+<symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.6c0 5-3.2 8.3-7.5 9.4-4.3-1.1-7.5-4.4-7.5-9.4V6l7.5-3z"/><path d="M8.7 12.2l2.2 2.2 4.4-4.4"/></symbol>
+<symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.6c0-.9.7-1.6 1.6-1.6H12v16H5.6A1.6 1.6 0 014 18.4V5.6z"/><path d="M20 5.6c0-.9-.7-1.6-1.6-1.6H12v16h6.4c.9 0 1.6-.7 1.6-1.6V5.6z"/><path d="M12 4v16"/></symbol>
+<symbol id="icon-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.4"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.3 2.3M18 6l-2.3 2.3M6 18l2.3-2.3M18 18l-2.3-2.3"/><circle cx="12" cy="12" r="1.6"/></symbol>
 </defs></svg>
 
-  <div class="slide">
+  <div class="slide" id="miudol-1">
     <div class="dot-grid"></div>
     <div class="glow glow-header"></div>
     <div class="glow glow-logo"></div>
@@ -376,6 +420,106 @@ svg.defs { position:absolute; width:0; height:0; }
       <div class="col">
         <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 96 96"><use href="#icon-doc-edit"/></svg></div></div>
         <div class="caption">ПОДГОТОВКА, РЕДАКТИРОВАНИЕ<br>И СОГЛАСОВАНИЕ МАТЕРИАЛОВ<br>ДЛЯ ПУБЛИКАЦИИ</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="miudol-2">
+    <div class="dot-grid"></div>
+    <div class="glow glow-header"></div>
+    <div class="glow glow-logo"></div>
+    <div class="glow-dot" style="left: calc(7.14% - 85px); width:170px; height:170px;"></div>
+    <div class="glow-dot" style="left: calc(21.43% - 85px); width:170px; height:170px;"></div>
+    <div class="glow-dot" style="left: calc(35.71% - 85px); width:170px; height:170px;"></div>
+    <div class="glow-dot" style="left: calc(50% - 85px); width:170px; height:170px;"></div>
+    <div class="glow-dot" style="left: calc(64.29% - 85px); width:170px; height:170px;"></div>
+    <div class="glow-dot" style="left: calc(78.57% - 85px); width:170px; height:170px;"></div>
+    <div class="glow-dot" style="left: calc(92.86% - 85px); width:170px; height:170px;"></div>
+
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 90"><use href="#icon-people-m"/></svg>
+      <div class="logo-text">МИУДОЛ</div>
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="header-text">
+      <div class="title">Консультант,<br>заместитель начальника отдела</div>
+      <div class="subtitle">Отдел мониторинга деятельности арбитражных управляющих</div>
+    </div>
+
+    <div class="header-icon"><svg viewBox="0 0 200 118" style="width:100%;height:100%;"><use href="#icon-search-dashboard"/></svg></div>
+
+    <div class="columns cols-7">
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-alert-triangle"/></svg></div></div>
+        <div class="caption">АНАЛИЗ ДЕЯТЕЛЬНОСТИ АУ И ВЫЯВЛЕНИЕ НАРУШЕНИЙ ЗАКОНОДАТЕЛЬСТВА</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-database"/></svg></div></div>
+        <div class="caption">КОНТРОЛЬ ВЕДЕНИЯ РЕЕСТРА АУ</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-checklist"/></svg></div></div>
+        <div class="caption">КОНТРОЛЬ ДЕЯТЕЛЬНОСТИ АУ И ФОРМИРОВАНИЕ РЕЕСТРА</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-scale"/></svg></div></div>
+        <div class="caption">АНАЛИЗ СУДЕБНОЙ ПРАКТИКИ, ПРЕДЛОЖЕНИЯ ПО НПА</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-shield"/></svg></div></div>
+        <div class="caption">КОНТРОЛЬ СПОРОВ ПО СУБСИДИАРНОЙ ОТВЕТСТВЕННОСТИ И ОСПАРИВАНИЮ СДЕЛОК</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-book"/></svg></div></div>
+        <div class="caption">ЗНАНИЕ НК, ГК, АПК, ГПК, УПК И ЗАКОНА О БАНКРОТСТВЕ</div>
+        <div class="connector">
+          <div class="beam"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-chip"/></svg></div></div>
+        <div class="caption">УЧАСТИЕ В ПИЛОТНЫХ ПРОЕКТАХ</div>
         <div class="connector">
           <div class="beam"></div>
           <div class="ring r2"></div>

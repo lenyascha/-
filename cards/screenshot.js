@@ -10,7 +10,7 @@ const path = require('path');
   await page.goto(filePath);
   await page.waitForTimeout(300);
 
-  const ids = ['card-1', 'card-2', 'card-3', 'card-4', 'card-5', 'card-6'];
+  const ids = ['card-1', 'card-2', 'card-3', 'card-4', 'card-5', 'card-6', 'card-7'];
   for (const id of ids) {
     const el = await page.$('#' + id);
     await el.screenshot({ path: path.resolve(__dirname, 'output', id + '.png') });

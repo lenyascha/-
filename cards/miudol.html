@@ -71,19 +71,21 @@ body { background:#111; }
 
 .logo {
   position: absolute;
-  top: 44px;
-  left: 48px;
+  top: 34px;
+  left: 46px;
+  width: 210px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
   z-index: 2;
 }
-.logo-mark { width: 92px; height: 92px; }
+.logo-mark { width: 108px; height: 100px; }
 .logo-text {
   color: #ffffff;
   font-weight: 800;
-  font-size: 34px;
-  letter-spacing: 1px;
+  font-size: 27px;
+  letter-spacing: 1.5px;
 }
 
 .header-divider {
@@ -187,29 +189,58 @@ body { background:#111; }
   width: 2px;
   height: 150px;
   margin-top: 40px;
-  background: linear-gradient(180deg, rgba(90,130,255,0.75), rgba(90,130,255,0.05));
+}
+.connector .beam {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  height: 150px;
+  transform: translateX(-50%);
+  clip-path: polygon(49% 0%, 51% 0%, 63% 100%, 37% 100%);
+  filter: blur(1px);
 }
 .connector .ring {
   position: absolute;
   left: 50%;
-  bottom: -20px;
+  bottom: -18px;
   transform: translateX(-50%);
   border-radius: 50%;
-  border: 1.5px solid rgba(110,160,255,0.35);
 }
-.connector .ring.r1 { width: 40px; height: 40px; bottom: -18px; }
-.connector .ring.r2 { width: 74px; height: 74px; bottom: -35px; }
+.connector .ring.r1 { width: 46px; height: 46px; bottom: -23px; border: 1.5px solid var(--beam-mid); }
+.connector .ring.r2 { width: 84px; height: 84px; bottom: -42px; border: 1.5px solid var(--beam-dim); }
 .connector .dot {
   position: absolute;
   left: 50%;
-  bottom: -10px;
+  bottom: -9px;
   transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 32%, #cfe4ff, #3a7bff);
-  box-shadow: 0 0 22px 8px rgba(58,123,255,0.55);
+  background: radial-gradient(circle at 35% 32%, #ffffff, var(--beam-core));
+  box-shadow: 0 0 26px 10px var(--beam-glow);
 }
+.col:nth-child(1) {
+  --beam-core: #c76bf0;
+  --beam-mid: rgba(199,107,240,0.5);
+  --beam-dim: rgba(199,107,240,0.22);
+  --beam-glow: rgba(199,107,240,0.6);
+}
+.col:nth-child(1) .beam { background: linear-gradient(180deg, rgba(199,107,240,0) 0%, rgba(199,107,240,0.85) 88%, #e2b6ff 100%); }
+.col:nth-child(2) {
+  --beam-core: #6f6cf0;
+  --beam-mid: rgba(111,108,240,0.5);
+  --beam-dim: rgba(111,108,240,0.22);
+  --beam-glow: rgba(111,108,240,0.6);
+}
+.col:nth-child(2) .beam { background: linear-gradient(180deg, rgba(111,108,240,0) 0%, rgba(111,108,240,0.85) 88%, #c3c0ff 100%); }
+.col:nth-child(3) {
+  --beam-core: #3ab0f5;
+  --beam-mid: rgba(58,176,245,0.5);
+  --beam-dim: rgba(58,176,245,0.22);
+  --beam-glow: rgba(58,176,245,0.6);
+}
+.col:nth-child(3) .beam { background: linear-gradient(180deg, rgba(58,176,245,0) 0%, rgba(58,176,245,0.85) 88%, #b6e6ff 100%); }
 
 .icon {
   stroke: #ffffff;
@@ -230,6 +261,11 @@ svg.defs { position:absolute; width:0; height:0; }
 <linearGradient id="grad-logo2" x1="0%" y1="0%" x2="100%" y2="100%">
   <stop offset="0%" stop-color="#3ab6f0"/>
   <stop offset="100%" stop-color="#3fd0e8"/>
+</linearGradient>
+<linearGradient id="grad-logo-full" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+  <stop offset="0%" stop-color="#8b3ce0"/>
+  <stop offset="48%" stop-color="#6a5cf0"/>
+  <stop offset="100%" stop-color="#38c6f0"/>
 </linearGradient>
 
 <symbol id="icon-laptop-globe" viewBox="0 0 96 96">
@@ -257,11 +293,17 @@ svg.defs { position:absolute; width:0; height:0; }
   <path d="M58 68l24-24 8 8-24 24H58v-8z" fill="#0c0a22" stroke="#ffffff"/>
 </symbol>
 
-<symbol id="icon-people-m" viewBox="0 0 100 60">
-  <circle cx="26" cy="16" r="13" fill="url(#grad-logo1)"/>
-  <path d="M4 58c0-16 10-28 22-28s22 12 22 28" fill="url(#grad-logo1)"/>
-  <circle cx="74" cy="16" r="13" fill="url(#grad-logo2)"/>
-  <path d="M52 58c0-16 10-28 22-28s22 12 22 28" fill="url(#grad-logo2)"/>
+<symbol id="icon-people-m" viewBox="0 0 100 90">
+  <path d="M6,84
+           C6,55 14,36 28,34
+           C36,33 42,42 50,58
+           C58,42 64,33 72,34
+           C86,36 94,55 94,84
+           C94,88 90,90 85,90
+           L15,90
+           C10,90 6,88 6,84 Z" fill="url(#grad-logo-full)"/>
+  <circle cx="28" cy="22" r="17" fill="url(#grad-logo-full)"/>
+  <circle cx="72" cy="22" r="17" fill="url(#grad-logo-full)"/>
 </symbol>
 
 <symbol id="icon-search-dashboard" viewBox="0 0 200 118">
@@ -291,7 +333,7 @@ svg.defs { position:absolute; width:0; height:0; }
     <div class="glow-dot c3"></div>
 
     <div class="logo">
-      <svg class="logo-mark" viewBox="0 0 100 60"><use href="#icon-people-m"/></svg>
+      <svg class="logo-mark" viewBox="0 0 100 90"><use href="#icon-people-m"/></svg>
       <div class="logo-text">МИУДОЛ</div>
     </div>
 
@@ -312,6 +354,7 @@ svg.defs { position:absolute; width:0; height:0; }
         <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 96 96"><use href="#icon-laptop-globe"/></svg></div></div>
         <div class="caption">МЕДИА-МОНИТОРИНГ<br>СМИ, ИНТЕРНЕТ-РЕСУРСОВ<br>И СОЦИАЛЬНЫХ МЕДИА</div>
         <div class="connector">
+          <div class="beam"></div>
           <div class="ring r2"></div>
           <div class="ring r1"></div>
           <div class="dot"></div>
@@ -321,6 +364,7 @@ svg.defs { position:absolute; width:0; height:0; }
         <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 96 96"><use href="#icon-doc-chart"/></svg></div></div>
         <div class="caption">ПОДГОТОВКА<br>АНАЛИТИЧЕСКИХ СПРАВОК<br>И ОТЧЁТОВ ПО РЕЗУЛЬТАТАМ<br>МЕДИА-МОНИТОРИНГА</div>
         <div class="connector">
+          <div class="beam"></div>
           <div class="ring r2"></div>
           <div class="ring r1"></div>
           <div class="dot"></div>
@@ -330,6 +374,7 @@ svg.defs { position:absolute; width:0; height:0; }
         <div class="circle"><div class="circle-inner"><svg class="icon" viewBox="0 0 96 96"><use href="#icon-doc-edit"/></svg></div></div>
         <div class="caption">ПОДГОТОВКА, РЕДАКТИРОВАНИЕ<br>И СОГЛАСОВАНИЕ МАТЕРИАЛОВ<br>ДЛЯ ПУБЛИКАЦИИ</div>
         <div class="connector">
+          <div class="beam"></div>
           <div class="ring r2"></div>
           <div class="ring r1"></div>
           <div class="dot"></div>

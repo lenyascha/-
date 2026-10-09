@@ -1,0 +1,695 @@
+{
+  "source": "4024713b-__________________2.docx",
+  "note": "primary_domain и secondary_domains — классификация по тексту документа; secondary_domains и привязка кейса 36 — вывод, а не прямое указание в документе",
+  "domains": [
+    {
+      "code": "ENS_PAYMENTS",
+      "name": "Администрирование платежей и ЕНС: учёт и сверка поступлений, квитирование, распределение по ТНО",
+      "case_ids": [
+        1,
+        2,
+        16,
+        17
+      ],
+      "count": 4
+    },
+    {
+      "code": "DEBT_COLLECTION",
+      "name": "Взыскание задолженности: меры взыскания (ст. 46–47 НК РФ), банки, списание безнадёжной задолженности (ст. 59 НК РФ)",
+      "case_ids": [
+        27,
+        28,
+        29,
+        36,
+        37
+      ],
+      "count": 5
+    },
+    {
+      "code": "BANKRUPTCY",
+      "name": "Банкротство: мониторинг процедур, арбитражные управляющие, конкурсная масса, субсидиарная ответственность, производный долг (ВПД)",
+      "case_ids": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        34,
+        35,
+        40,
+        41
+      ],
+      "count": 12
+    },
+    {
+      "code": "PAYMENT_DEFERRAL_SUPPORT",
+      "name": "Изменение сроков уплаты и меры поддержки: отсрочка/рассрочка, обеспечение (залог, поручительство, оценка), реструктуризация",
+      "case_ids": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        45,
+        46,
+        47
+      ],
+      "count": 8
+    },
+    {
+      "code": "CONTROL_AND_PROVISIONAL_MEASURES",
+      "name": "Налоговый контроль и обеспечительные меры: оценка платежеспособности, арест имущества (ст. 77 НК РФ)",
+      "case_ids": [
+        38,
+        39
+      ],
+      "count": 2
+    },
+    {
+      "code": "DISPUTES",
+      "name": "Правовая работа и досудебное урегулирование споров (жалобы, судебная практика)",
+      "case_ids": [
+        44
+      ],
+      "count": 1
+    },
+    {
+      "code": "TAXPAYER_FINANCIAL_MONITORING",
+      "name": "Мониторинг финансового состояния налогоплательщиков и качество аналитических продуктов по ним",
+      "case_ids": [
+        14,
+        42,
+        43
+      ],
+      "count": 3
+    },
+    {
+      "code": "INTERNAL_NON_TAX",
+      "name": "Внутренняя деятельность ведомства, не связанная с налоговым процессом: кадры, закупки, ИТ-разработка, управленческая отчётность",
+      "case_ids": [
+        3,
+        4,
+        5,
+        11,
+        12,
+        13,
+        15,
+        18,
+        30,
+        31,
+        32,
+        33
+      ],
+      "count": 12
+    }
+  ],
+  "cases": [
+    {
+      "id": 1,
+      "title": "Сверка поступлений по КБК с извещениями ф. 0504805, распределение по ТНО",
+      "department": "02 Финансовый",
+      "primary_domain": "ENS_PAYMENTS",
+      "secondary_domains": [],
+      "legal_basis": [
+        "ф. 0504805"
+      ],
+      "sensitive_data": "ИНН/КПП, ПДн физлиц (исключить/обезличить)",
+      "ai_task": "сопоставление, классификация",
+      "maturity": "постановка"
+    },
+    {
+      "id": 2,
+      "title": "Сверка извещений ф. 0504805 с платёжными документами, комплект для ЕНС",
+      "department": "02 Финансовый",
+      "primary_domain": "ENS_PAYMENTS",
+      "secondary_domains": [],
+      "legal_basis": [
+        "ф. 0504805"
+      ],
+      "sensitive_data": "данные плательщиков, ИНН/КПП, ПДн во вложениях",
+      "ai_task": "сверка, извлечение документов",
+      "maturity": "постановка"
+    },
+    {
+      "id": 3,
+      "title": "Интеллектуальный анализ кадрового дашборда",
+      "department": "03 Кадры",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "кадровые данные (анонимизация на этапе разработки)",
+      "ai_task": "аналитика отклонений",
+      "maturity": "постановка"
+    },
+    {
+      "id": 4,
+      "title": "Цифровое согласование продления срочных служебных контрактов",
+      "department": "03 Кадры",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "кадровые данные, видеовизитки",
+      "ai_task": "цифровой процесс (ИИ не упомянут)",
+      "maturity": "постановка"
+    },
+    {
+      "id": 5,
+      "title": "Описание объекта закупки (ТЗ) по 44-ФЗ",
+      "department": "04 Обеспечения",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [
+        "44-ФЗ ст. 33",
+        "ч. 12 ст. 93"
+      ],
+      "sensitive_data": "не указано",
+      "ai_task": "генерация документа по нормативке",
+      "maturity": "постановка"
+    },
+    {
+      "id": 6,
+      "title": "Анализ отчётов об оценке имущества",
+      "department": "05 Мониторинг имущественного обеспечения",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [
+        "135-ФЗ",
+        "ФСО"
+      ],
+      "sensitive_data": "не указано",
+      "ai_task": "анализ документа (200+ стр.)",
+      "maturity": "постановка"
+    },
+    {
+      "id": 7,
+      "title": "Анализ выписок ЕГРН (обременения, собственник)",
+      "department": "05 Мониторинг имущественного обеспечения",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "сведения о собственниках",
+      "ai_task": "массовое извлечение данных из PDF",
+      "maturity": "постановка"
+    },
+    {
+      "id": 8,
+      "title": "Проверка залогов движимого имущества в реестре ФНП",
+      "department": "05 Мониторинг имущественного обеспечения",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "не указано",
+      "ai_task": "поиск во внешнем источнике",
+      "maturity": "постановка"
+    },
+    {
+      "id": 9,
+      "title": "Рыночная стоимость по аналогам (Циан, Авито, Авто.ру)",
+      "department": "05 Мониторинг имущественного обеспечения",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "не указано",
+      "ai_task": "поиск и анализ в интернете",
+      "maturity": "постановка"
+    },
+    {
+      "id": 10,
+      "title": "Анализ поручителя",
+      "department": "05 Мониторинг имущественного обеспечения",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "данные о долгах, доходах, судах (СПАРК, Контур.Фокус и др.)",
+      "ai_task": "сбор и анализ из разных источников",
+      "maturity": "постановка"
+    },
+    {
+      "id": 11,
+      "title": "Расшифровка совещаний, протокол и реестр поручений",
+      "department": "06 Цифровая трансформация",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "голос и ФИО, реквизиты налогоплательщиков (локально)",
+      "ai_task": "речь в текст, структурирование",
+      "maturity": "постановка"
+    },
+    {
+      "id": 12,
+      "title": "Единый управленческий дашборд для руководства",
+      "department": "06 Цифровая трансформация",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ФИО сотрудников; налоговая тайна не выводится",
+      "ai_task": "дашборд, сведение источников",
+      "maturity": "постановка"
+    },
+    {
+      "id": 13,
+      "title": "Свод замечаний по итогам тестирования",
+      "department": "06 Цифровая трансформация",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ИНН и наименования налогоплательщиков, ФИО заявителей",
+      "ai_task": "классификация, дедубликация",
+      "maturity": "постановка"
+    },
+    {
+      "id": 14,
+      "title": "Проверка справок «Единый финансовый анализ»",
+      "department": "06 Цифровая трансформация",
+      "primary_domain": "TAXPAYER_FINANCIAL_MONITORING",
+      "secondary_domains": [
+        "INTERNAL_NON_TAX"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "налоговая тайна: ИНН, показатели отчётности",
+      "ai_task": "контроль качества документов",
+      "maturity": "постановка"
+    },
+    {
+      "id": 15,
+      "title": "Обработка предложений территориальных органов по развитию систем",
+      "department": "06 Цифровая трансформация",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ФИО должностных лиц; налоговой тайны нет",
+      "ai_task": "кластеризация, ранжирование",
+      "maturity": "постановка"
+    },
+    {
+      "id": 16,
+      "title": "Персонифицированная сверка ЕНП",
+      "department": "07 Сопровождение ЕНС",
+      "primary_domain": "ENS_PAYMENTS",
+      "secondary_domains": [],
+      "legal_basis": [
+        "СДДО",
+        "АИФДБ",
+        "ED108"
+      ],
+      "sensitive_data": "данные налогоплательщиков, ПДн физлиц (ED108)",
+      "ai_task": "расчёт по формуле, сверка",
+      "maturity": "постановка"
+    },
+    {
+      "id": 17,
+      "title": "Неквитированные платежи",
+      "department": "07 Сопровождение ЕНС",
+      "primary_domain": "ENS_PAYMENTS",
+      "secondary_domains": [],
+      "legal_basis": [
+        "ГИС ГМП",
+        "УИП"
+      ],
+      "sensitive_data": "поиск по УИП, не по ИНН",
+      "ai_task": "агентный доступ к АИС, поиск причины",
+      "maturity": "постановка"
+    },
+    {
+      "id": 18,
+      "title": "Получение данных из ClickHouse",
+      "department": "08 Анализ больших данных",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ИНН очищаются через ЦОД-1",
+      "ai_task": "вопрос доступа к данным (не ИИ)",
+      "maturity": "постановка"
+    },
+    {
+      "id": 19,
+      "title": "Список закрепления арбитражных управляющих",
+      "department": "10 Мониторинг арбитражных управляющих",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "не указано",
+      "ai_task": "качество данных, интеграция с КАД",
+      "maturity": "постановка"
+    },
+    {
+      "id": 20,
+      "title": "Рейтинг отработки ТНО процессуальных документов",
+      "department": "10 Мониторинг арбитражных управляющих",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "фильтрация защищённых лиц",
+      "ai_task": "справочник кодов, отчёт",
+      "maturity": "постановка"
+    },
+    {
+      "id": 21,
+      "title": "Тип обособленного спора в выгрузке судебных актов",
+      "department": "11 Дистанционный мониторинг банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [
+        "DISPUTES"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "ПДн должников-физлиц; внутри контура без анонимизации",
+      "ai_task": "классификация текста",
+      "maturity": "работает (покрытие 79%)"
+    },
+    {
+      "id": 22,
+      "title": "Еженедельный перечень новых банкротств для ЦК ИПБ",
+      "department": "11 Дистанционный мониторинг банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "ПДн должников и АУ; внутри контура",
+      "ai_task": "сборка из API и SQL",
+      "maturity": "почти готов"
+    },
+    {
+      "id": 23,
+      "title": "Актуальная стадия банкротства по перечням дел",
+      "department": "11 Дистанционный мониторинг банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ИНН и ФИО должников",
+      "ai_task": "поиск по API судебных дел",
+      "maturity": "работает (покрытие 96,8%)"
+    },
+    {
+      "id": 24,
+      "title": "Заявления о субсидиарной ответственности и контролирующие лица",
+      "department": "11 Дистанционный мониторинг банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "ФИО и ИНН контролирующих лиц",
+      "ai_task": "SQL и API, реестр",
+      "maturity": "частично"
+    },
+    {
+      "id": 25,
+      "title": "Аналитика состояния задолженности и слайд для руководства",
+      "department": "11 Дистанционный мониторинг банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "в слайд идут только агрегаты",
+      "ai_task": "методика разметки, генерация слайда",
+      "maturity": "работает (совпадение 95,6%)"
+    },
+    {
+      "id": 26,
+      "title": "Еженедельный интерактивный дашборд ЦК ИПБ",
+      "department": "11 Дистанционный мониторинг банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ПДн должников и АУ; внешний вариант только агрегаты",
+      "ai_task": "сведение выгрузок, офлайн-HTML",
+      "maturity": "работает"
+    },
+    {
+      "id": 27,
+      "title": "Категоризация должников и маршрутизация сценария взыскания",
+      "department": "12 Централизованное применение мер взыскания",
+      "primary_domain": "DEBT_COLLECTION",
+      "secondary_domains": [
+        "BANKRUPTCY"
+      ],
+      "legal_basis": [
+        "ст. 47 НК РФ"
+      ],
+      "sensitive_data": "данные должников из АИС и ФОИВ",
+      "ai_task": "кластеризация, приоритизация",
+      "maturity": "проект модели"
+    },
+    {
+      "id": 28,
+      "title": "Гибкие дашборды и конструктор запросов",
+      "department": "12 Централизованное применение мер взыскания",
+      "primary_domain": "DEBT_COLLECTION",
+      "secondary_domains": [
+        "INTERNAL_NON_TAX"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "не указано",
+      "ai_task": "конструктор запросов в диалоге",
+      "maturity": "концепция"
+    },
+    {
+      "id": 29,
+      "title": "Проверка гипотез прироста задолженности",
+      "department": "13 Аналитический",
+      "primary_domain": "DEBT_COLLECTION",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "датасет по налогоплательщикам (нужна анонимизация)",
+      "ai_task": "проверка гипотез",
+      "maturity": "постановка"
+    },
+    {
+      "id": 30,
+      "title": "Ускоренный анализ выгрузок данных",
+      "department": "14 Разработка и развитие сервисов",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ПДн пользователей сервисов (обезличить до ИИ)",
+      "ai_task": "очистка и сводка",
+      "maturity": "постановка"
+    },
+    {
+      "id": 31,
+      "title": "HRochka ATS: автоматизация воронки найма",
+      "department": "14 Разработка и развитие сервисов",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ПДн кандидатов (HH.ru)",
+      "ai_task": "автоматизация процесса, оценка резюме",
+      "maturity": "в проде (3 вакансии)"
+    },
+    {
+      "id": 32,
+      "title": "Актуализация телефонного справочника",
+      "department": "14 Разработка и развитие сервисов",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "ПДн сотрудников",
+      "ai_task": "сверка, выявление изменений",
+      "maturity": "постановка"
+    },
+    {
+      "id": 33,
+      "title": "Подготовка презентации по проекту",
+      "department": "14 Разработка и развитие сервисов",
+      "primary_domain": "INTERNAL_NON_TAX",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "фото и отчёты с возможными ПДн",
+      "ai_task": "резюмирование, структура презентации",
+      "maturity": "постановка"
+    },
+    {
+      "id": 34,
+      "title": "Анализ еженедельной отчётности ЦК ВПД",
+      "department": "15 Работа с производным долгом",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "обезличенные данные",
+      "ai_task": "свод и дашборд",
+      "maturity": "постановка"
+    },
+    {
+      "id": 35,
+      "title": "Нарушения и риски при принятии механизмов ВПД",
+      "department": "15 Работа с производным долгом",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [
+        "DEBT_COLLECTION"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "реестр ЦК ВПД, ЕФРСБ",
+      "ai_task": "проверка сроков и требований",
+      "maturity": "постановка"
+    },
+    {
+      "id": 36,
+      "title": "Анализ отказов банков",
+      "department": "16 Контроль исполнения обязанностей кредитными организациями",
+      "primary_domain": "DEBT_COLLECTION",
+      "secondary_domains": [
+        "ENS_PAYMENTS"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "в кейсе: риск ПДн отсутствует (1,1 млн записей, 388 тыс. плательщиков)",
+      "ai_task": "классификация текста причин отказа",
+      "maturity": "постановка (связь со взысканием выведена по названию отдела)"
+    },
+    {
+      "id": 37,
+      "title": "Анализ судебных актов на предмет списания безнадёжной задолженности",
+      "department": "17 Контроль взыскания долга",
+      "primary_domain": "DEBT_COLLECTION",
+      "secondary_domains": [
+        "DISPUTES"
+      ],
+      "legal_basis": [
+        "пп. 4 п. 1 ст. 59 НК РФ",
+        "ст. 48 НК РФ"
+      ],
+      "sensitive_data": "тексты судебных актов, чаще обезличены",
+      "ai_task": "поиск формулировок в текстах",
+      "maturity": "постановка"
+    },
+    {
+      "id": 38,
+      "title": "Аналитическая справка о платежеспособности налогоплательщика",
+      "department": "19 Экспертное сопровождение мероприятий налогового контроля (и 26 Обеспечительные меры)",
+      "primary_domain": "CONTROL_AND_PROVISIONAL_MEASURES",
+      "secondary_domains": [
+        "DEBT_COLLECTION",
+        "PAYMENT_DEFERRAL_SUPPORT"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "высокий риск: налоговая тайна, ПДн; только защищённый контур",
+      "ai_task": "извлечение, расчёт, генерация справки",
+      "maturity": "постановка"
+    },
+    {
+      "id": 39,
+      "title": "Анализ судебной практики по аресту имущества (ст. 77 НК РФ)",
+      "department": "19 Экспертное сопровождение мероприятий налогового контроля (и 26 Обеспечительные меры)",
+      "primary_domain": "CONTROL_AND_PROVISIONAL_MEASURES",
+      "secondary_domains": [
+        "DISPUTES"
+      ],
+      "legal_basis": [
+        "ст. 77 НК РФ"
+      ],
+      "sensitive_data": "ПДн и сведения ограниченного доступа",
+      "ai_task": "поиск, обзор практики",
+      "maturity": "постановка"
+    },
+    {
+      "id": 40,
+      "title": "Анализ ежемесячной отчётности ЦК РКМ",
+      "department": "20 Сопровождение процедур банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "обезличенные данные",
+      "ai_task": "свод и слайды",
+      "maturity": "постановка"
+    },
+    {
+      "id": 41,
+      "title": "Нарушения и риски при формировании и реализации конкурсной массы",
+      "department": "20 Сопровождение процедур банкротства",
+      "primary_domain": "BANKRUPTCY",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "реестр ЦК РКМ, ЕФРСБ",
+      "ai_task": "проверка сроков и требований",
+      "maturity": "постановка"
+    },
+    {
+      "id": 42,
+      "title": "Сбор датасета по бухгалтерской и налоговой отчётности",
+      "department": "22 Мониторинг финансового состояния налогоплательщиков",
+      "primary_domain": "TAXPAYER_FINANCIAL_MONITORING",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "риск ПДн при сборе ТОПов по зарплате",
+      "ai_task": "сведение таблиц вместо ВПР",
+      "maturity": "планируется"
+    },
+    {
+      "id": 43,
+      "title": "Квартальный мониторинг стратегических организаций и ОПК",
+      "department": "22 Мониторинг финансового состояния налогоплательщиков",
+      "primary_domain": "TAXPAYER_FINANCIAL_MONITORING",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "данные АИС «Налог-3»",
+      "ai_task": "сведение таблиц вместо ВПР",
+      "maturity": "планируется"
+    },
+    {
+      "id": 44,
+      "title": "Проекты решений по жалобам (гл. 9, ст. 77, п. 10 ст. 101 НК РФ)",
+      "department": "23 Правовая работа и досудебное урегулирование споров",
+      "primary_domain": "DISPUTES",
+      "secondary_domains": [
+        "CONTROL_AND_PROVISIONAL_MEASURES"
+      ],
+      "legal_basis": [
+        "гл. 9 НК РФ",
+        "ст. 77 НК РФ",
+        "п. 10 ст. 101 НК РФ"
+      ],
+      "sensitive_data": "документы-основания; внутри контура",
+      "ai_task": "генерация проекта решения",
+      "maturity": "постановка"
+    },
+    {
+      "id": 45,
+      "title": "Анализ банковских операций по счетам налогоплательщика",
+      "department": "24 Изменение сроков уплаты (и 18 Согласительные процедуры)",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [
+        "CONTROL_AND_PROVISIONAL_MEASURES"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "банковские выписки; ПДн и налоговая тайна в кейсе не упомянуты",
+      "ai_task": "анализ операций",
+      "maturity": "постановка"
+    },
+    {
+      "id": 46,
+      "title": "Дашборд по мерам поддержки «Площадка реструктуризации долга»",
+      "department": "24 Изменение сроков уплаты (и 18 Согласительные процедуры)",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [],
+      "legal_basis": [],
+      "sensitive_data": "нужно обезличивание",
+      "ai_task": "сведение источников, дашборд",
+      "maturity": "постановка"
+    },
+    {
+      "id": 47,
+      "title": "Краткая справка о платежеспособности из заключения для Подкомиссии",
+      "department": "24 Изменение сроков уплаты (и 18 Согласительные процедуры)",
+      "primary_domain": "PAYMENT_DEFERRAL_SUPPORT",
+      "secondary_domains": [
+        "CONTROL_AND_PROVISIONAL_MEASURES"
+      ],
+      "legal_basis": [],
+      "sensitive_data": "нужно обезличивание",
+      "ai_task": "резюмирование документа на 100–150 листов",
+      "maturity": "постановка"
+    }
+  ]
+}

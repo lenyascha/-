@@ -1,6 +1,6 @@
 {
   "source": "4024713b-__________________2.docx",
-  "note": "primary_domain и secondary_domains — классификация по тексту документа; secondary_domains и привязка кейса 36 — вывод, а не прямое указание в документе",
+  "note": "primary_domain и secondary_domains — классификация по тексту документа; secondary_domains и привязка кейса 36 — вывод, а не прямое указание в документе; domains описывают предмет кейса (налоговая функция), subdomains — сквозной тип проблемы; primary_subdomain и secondary_subdomains выведены по тексту кейсов",
   "domains": [
     {
       "code": "ENS_PAYMENTS",
@@ -118,7 +118,11 @@
       ],
       "sensitive_data": "ИНН/КПП, ПДн физлиц (исключить/обезличить)",
       "ai_task": "сопоставление, классификация",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RECONCILIATION",
+      "secondary_subdomains": [
+        "CLASSIFICATION_DEDUP"
+      ]
     },
     {
       "id": 2,
@@ -131,7 +135,11 @@
       ],
       "sensitive_data": "данные плательщиков, ИНН/КПП, ПДн во вложениях",
       "ai_task": "сверка, извлечение документов",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RECONCILIATION",
+      "secondary_subdomains": [
+        "COMPLIANCE_CHECK"
+      ]
     },
     {
       "id": 3,
@@ -142,7 +150,9 @@
       "legal_basis": [],
       "sensitive_data": "кадровые данные (анонимизация на этапе разработки)",
       "ai_task": "аналитика отклонений",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": []
     },
     {
       "id": 4,
@@ -153,7 +163,9 @@
       "legal_basis": [],
       "sensitive_data": "кадровые данные, видеовизитки",
       "ai_task": "цифровой процесс (ИИ не упомянут)",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "PROCESS_AUTOMATION",
+      "secondary_subdomains": []
     },
     {
       "id": 5,
@@ -167,7 +179,11 @@
       ],
       "sensitive_data": "не указано",
       "ai_task": "генерация документа по нормативке",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_GENERATION",
+      "secondary_subdomains": [
+        "COMPLIANCE_CHECK"
+      ]
     },
     {
       "id": 6,
@@ -183,7 +199,11 @@
       ],
       "sensitive_data": "не указано",
       "ai_task": "анализ документа (200+ стр.)",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "COMPLIANCE_CHECK",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS"
+      ]
     },
     {
       "id": 7,
@@ -196,7 +216,9 @@
       "legal_basis": [],
       "sensitive_data": "сведения о собственниках",
       "ai_task": "массовое извлечение данных из PDF",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_ANALYSIS",
+      "secondary_subdomains": []
     },
     {
       "id": 8,
@@ -209,7 +231,9 @@
       "legal_basis": [],
       "sensitive_data": "не указано",
       "ai_task": "поиск во внешнем источнике",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "EXTERNAL_COLLECTION",
+      "secondary_subdomains": []
     },
     {
       "id": 9,
@@ -220,7 +244,11 @@
       "legal_basis": [],
       "sensitive_data": "не указано",
       "ai_task": "поиск и анализ в интернете",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RISK_VALUATION",
+      "secondary_subdomains": [
+        "EXTERNAL_COLLECTION"
+      ]
     },
     {
       "id": 10,
@@ -233,7 +261,12 @@
       "legal_basis": [],
       "sensitive_data": "данные о долгах, доходах, судах (СПАРК, Контур.Фокус и др.)",
       "ai_task": "сбор и анализ из разных источников",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RISK_VALUATION",
+      "secondary_subdomains": [
+        "EXTERNAL_COLLECTION",
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 11,
@@ -244,7 +277,11 @@
       "legal_basis": [],
       "sensitive_data": "голос и ФИО, реквизиты налогоплательщиков (локально)",
       "ai_task": "речь в текст, структурирование",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_GENERATION",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS"
+      ]
     },
     {
       "id": 12,
@@ -255,7 +292,11 @@
       "legal_basis": [],
       "sensitive_data": "ФИО сотрудников; налоговая тайна не выводится",
       "ai_task": "дашборд, сведение источников",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 13,
@@ -266,7 +307,11 @@
       "legal_basis": [],
       "sensitive_data": "ИНН и наименования налогоплательщиков, ФИО заявителей",
       "ai_task": "классификация, дедубликация",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "CLASSIFICATION_DEDUP",
+      "secondary_subdomains": [
+        "DOC_GENERATION"
+      ]
     },
     {
       "id": 14,
@@ -279,7 +324,11 @@
       "legal_basis": [],
       "sensitive_data": "налоговая тайна: ИНН, показатели отчётности",
       "ai_task": "контроль качества документов",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "COMPLIANCE_CHECK",
+      "secondary_subdomains": [
+        "RECONCILIATION"
+      ]
     },
     {
       "id": 15,
@@ -290,7 +339,11 @@
       "legal_basis": [],
       "sensitive_data": "ФИО должностных лиц; налоговой тайны нет",
       "ai_task": "кластеризация, ранжирование",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "CLASSIFICATION_DEDUP",
+      "secondary_subdomains": [
+        "ANALYTICS_REPORTING"
+      ]
     },
     {
       "id": 16,
@@ -305,7 +358,11 @@
       ],
       "sensitive_data": "данные налогоплательщиков, ПДн физлиц (ED108)",
       "ai_task": "расчёт по формуле, сверка",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RECONCILIATION",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 17,
@@ -319,7 +376,9 @@
       ],
       "sensitive_data": "поиск по УИП, не по ИНН",
       "ai_task": "агентный доступ к АИС, поиск причины",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "PROCESS_AUTOMATION",
+      "secondary_subdomains": []
     },
     {
       "id": 18,
@@ -330,7 +389,9 @@
       "legal_basis": [],
       "sensitive_data": "ИНН очищаются через ЦОД-1",
       "ai_task": "вопрос доступа к данным (не ИИ)",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DATA_QUALITY_ACCESS",
+      "secondary_subdomains": []
     },
     {
       "id": 19,
@@ -341,7 +402,11 @@
       "legal_basis": [],
       "sensitive_data": "не указано",
       "ai_task": "качество данных, интеграция с КАД",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DATA_QUALITY_ACCESS",
+      "secondary_subdomains": [
+        "EXTERNAL_COLLECTION"
+      ]
     },
     {
       "id": 20,
@@ -352,7 +417,11 @@
       "legal_basis": [],
       "sensitive_data": "фильтрация защищённых лиц",
       "ai_task": "справочник кодов, отчёт",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DATA_QUALITY_ACCESS",
+      "secondary_subdomains": [
+        "ANALYTICS_REPORTING"
+      ]
     },
     {
       "id": 21,
@@ -365,7 +434,11 @@
       "legal_basis": [],
       "sensitive_data": "ПДн должников-физлиц; внутри контура без анонимизации",
       "ai_task": "классификация текста",
-      "maturity": "работает (покрытие 79%)"
+      "maturity": "работает (покрытие 79%)",
+      "primary_subdomain": "CLASSIFICATION_DEDUP",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS"
+      ]
     },
     {
       "id": 22,
@@ -378,7 +451,12 @@
       "legal_basis": [],
       "sensitive_data": "ПДн должников и АУ; внутри контура",
       "ai_task": "сборка из API и SQL",
-      "maturity": "почти готов"
+      "maturity": "почти готов",
+      "primary_subdomain": "DATA_CONSOLIDATION",
+      "secondary_subdomains": [
+        "EXTERNAL_COLLECTION",
+        "PROCESS_AUTOMATION"
+      ]
     },
     {
       "id": 23,
@@ -389,7 +467,9 @@
       "legal_basis": [],
       "sensitive_data": "ИНН и ФИО должников",
       "ai_task": "поиск по API судебных дел",
-      "maturity": "работает (покрытие 96,8%)"
+      "maturity": "работает (покрытие 96,8%)",
+      "primary_subdomain": "EXTERNAL_COLLECTION",
+      "secondary_subdomains": []
     },
     {
       "id": 24,
@@ -402,7 +482,11 @@
       "legal_basis": [],
       "sensitive_data": "ФИО и ИНН контролирующих лиц",
       "ai_task": "SQL и API, реестр",
-      "maturity": "частично"
+      "maturity": "частично",
+      "primary_subdomain": "EXTERNAL_COLLECTION",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 25,
@@ -415,7 +499,12 @@
       "legal_basis": [],
       "sensitive_data": "в слайд идут только агрегаты",
       "ai_task": "методика разметки, генерация слайда",
-      "maturity": "работает (совпадение 95,6%)"
+      "maturity": "работает (совпадение 95,6%)",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": [
+        "CLASSIFICATION_DEDUP",
+        "DOC_GENERATION"
+      ]
     },
     {
       "id": 26,
@@ -426,7 +515,11 @@
       "legal_basis": [],
       "sensitive_data": "ПДн должников и АУ; внешний вариант только агрегаты",
       "ai_task": "сведение выгрузок, офлайн-HTML",
-      "maturity": "работает"
+      "maturity": "работает",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 27,
@@ -441,7 +534,11 @@
       ],
       "sensitive_data": "данные должников из АИС и ФОИВ",
       "ai_task": "кластеризация, приоритизация",
-      "maturity": "проект модели"
+      "maturity": "проект модели",
+      "primary_subdomain": "RISK_VALUATION",
+      "secondary_subdomains": [
+        "CLASSIFICATION_DEDUP"
+      ]
     },
     {
       "id": 28,
@@ -454,7 +551,9 @@
       "legal_basis": [],
       "sensitive_data": "не указано",
       "ai_task": "конструктор запросов в диалоге",
-      "maturity": "концепция"
+      "maturity": "концепция",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": []
     },
     {
       "id": 29,
@@ -465,7 +564,9 @@
       "legal_basis": [],
       "sensitive_data": "датасет по налогоплательщикам (нужна анонимизация)",
       "ai_task": "проверка гипотез",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": []
     },
     {
       "id": 30,
@@ -476,7 +577,11 @@
       "legal_basis": [],
       "sensitive_data": "ПДн пользователей сервисов (обезличить до ИИ)",
       "ai_task": "очистка и сводка",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DATA_QUALITY_ACCESS",
+      "secondary_subdomains": [
+        "ANALYTICS_REPORTING"
+      ]
     },
     {
       "id": 31,
@@ -487,7 +592,11 @@
       "legal_basis": [],
       "sensitive_data": "ПДн кандидатов (HH.ru)",
       "ai_task": "автоматизация процесса, оценка резюме",
-      "maturity": "в проде (3 вакансии)"
+      "maturity": "в проде (3 вакансии)",
+      "primary_subdomain": "PROCESS_AUTOMATION",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS"
+      ]
     },
     {
       "id": 32,
@@ -498,7 +607,9 @@
       "legal_basis": [],
       "sensitive_data": "ПДн сотрудников",
       "ai_task": "сверка, выявление изменений",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RECONCILIATION",
+      "secondary_subdomains": []
     },
     {
       "id": 33,
@@ -509,7 +620,11 @@
       "legal_basis": [],
       "sensitive_data": "фото и отчёты с возможными ПДн",
       "ai_task": "резюмирование, структура презентации",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_GENERATION",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS"
+      ]
     },
     {
       "id": 34,
@@ -520,7 +635,11 @@
       "legal_basis": [],
       "sensitive_data": "обезличенные данные",
       "ai_task": "свод и дашборд",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 35,
@@ -533,7 +652,9 @@
       "legal_basis": [],
       "sensitive_data": "реестр ЦК ВПД, ЕФРСБ",
       "ai_task": "проверка сроков и требований",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "COMPLIANCE_CHECK",
+      "secondary_subdomains": []
     },
     {
       "id": 36,
@@ -546,7 +667,11 @@
       "legal_basis": [],
       "sensitive_data": "в кейсе: риск ПДн отсутствует (1,1 млн записей, 388 тыс. плательщиков)",
       "ai_task": "классификация текста причин отказа",
-      "maturity": "постановка (связь со взысканием выведена по названию отдела)"
+      "maturity": "постановка (связь со взысканием выведена по названию отдела)",
+      "primary_subdomain": "CLASSIFICATION_DEDUP",
+      "secondary_subdomains": [
+        "DOC_GENERATION"
+      ]
     },
     {
       "id": 37,
@@ -562,7 +687,11 @@
       ],
       "sensitive_data": "тексты судебных актов, чаще обезличены",
       "ai_task": "поиск формулировок в текстах",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_ANALYSIS",
+      "secondary_subdomains": [
+        "CLASSIFICATION_DEDUP"
+      ]
     },
     {
       "id": 38,
@@ -576,7 +705,12 @@
       "legal_basis": [],
       "sensitive_data": "высокий риск: налоговая тайна, ПДн; только защищённый контур",
       "ai_task": "извлечение, расчёт, генерация справки",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RISK_VALUATION",
+      "secondary_subdomains": [
+        "DOC_GENERATION",
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 39,
@@ -591,7 +725,12 @@
       ],
       "sensitive_data": "ПДн и сведения ограниченного доступа",
       "ai_task": "поиск, обзор практики",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_ANALYSIS",
+      "secondary_subdomains": [
+        "EXTERNAL_COLLECTION",
+        "DOC_GENERATION"
+      ]
     },
     {
       "id": 40,
@@ -602,7 +741,11 @@
       "legal_basis": [],
       "sensitive_data": "обезличенные данные",
       "ai_task": "свод и слайды",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 41,
@@ -613,7 +756,9 @@
       "legal_basis": [],
       "sensitive_data": "реестр ЦК РКМ, ЕФРСБ",
       "ai_task": "проверка сроков и требований",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "COMPLIANCE_CHECK",
+      "secondary_subdomains": []
     },
     {
       "id": 42,
@@ -624,7 +769,9 @@
       "legal_basis": [],
       "sensitive_data": "риск ПДн при сборе ТОПов по зарплате",
       "ai_task": "сведение таблиц вместо ВПР",
-      "maturity": "планируется"
+      "maturity": "планируется",
+      "primary_subdomain": "DATA_CONSOLIDATION",
+      "secondary_subdomains": []
     },
     {
       "id": 43,
@@ -635,7 +782,9 @@
       "legal_basis": [],
       "sensitive_data": "данные АИС «Налог-3»",
       "ai_task": "сведение таблиц вместо ВПР",
-      "maturity": "планируется"
+      "maturity": "планируется",
+      "primary_subdomain": "DATA_CONSOLIDATION",
+      "secondary_subdomains": []
     },
     {
       "id": 44,
@@ -652,7 +801,11 @@
       ],
       "sensitive_data": "документы-основания; внутри контура",
       "ai_task": "генерация проекта решения",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_GENERATION",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS"
+      ]
     },
     {
       "id": 45,
@@ -665,7 +818,12 @@
       "legal_basis": [],
       "sensitive_data": "банковские выписки; ПДн и налоговая тайна в кейсе не упомянуты",
       "ai_task": "анализ операций",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "RISK_VALUATION",
+      "secondary_subdomains": [
+        "DOC_ANALYSIS",
+        "DOC_GENERATION"
+      ]
     },
     {
       "id": 46,
@@ -676,7 +834,11 @@
       "legal_basis": [],
       "sensitive_data": "нужно обезличивание",
       "ai_task": "сведение источников, дашборд",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "ANALYTICS_REPORTING",
+      "secondary_subdomains": [
+        "DATA_CONSOLIDATION"
+      ]
     },
     {
       "id": 47,
@@ -689,7 +851,324 @@
       "legal_basis": [],
       "sensitive_data": "нужно обезличивание",
       "ai_task": "резюмирование документа на 100–150 листов",
-      "maturity": "постановка"
+      "maturity": "постановка",
+      "primary_subdomain": "DOC_ANALYSIS",
+      "secondary_subdomains": [
+        "DOC_GENERATION"
+      ]
     }
-  ]
+  ],
+  "subdomains": [
+    {
+      "code": "DATA_CONSOLIDATION",
+      "name": "Консолидация данных из разных источников",
+      "common_pain": "Данные лежат в разных системах и выгрузках; сотрудник склеивает их вручную (ВПР, Excel, подтягивание по ИНН или номеру дела), файлы приходят с меняющейся структурой.",
+      "reusable_pattern": "Единый конвейер загрузки и сведения выгрузок с ключом ИНН / номер дела и автоматической проверкой сходимости с эталоном. Кейсы 42 и 43 по тексту проблемы идентичны.",
+      "primary_case_ids": [
+        22,
+        42,
+        43
+      ],
+      "secondary_case_ids": [
+        10,
+        12,
+        16,
+        24,
+        26,
+        34,
+        38,
+        40,
+        46
+      ],
+      "total_cases": 12
+    },
+    {
+      "code": "DOC_ANALYSIS",
+      "name": "Анализ и извлечение из больших документов",
+      "common_pain": "Сотрудник читает сотни страниц или массив PDF и судебных актов, поэтому анализ частичный или выборочный.",
+      "reusable_pattern": "Извлечение структурированных полей и краткая выжимка со ссылкой на фрагмент первоисточника. Один механизм для судебных актов (7, 21, 37, 39) и объёмных заключений (38, 45, 47).",
+      "primary_case_ids": [
+        7,
+        37,
+        39,
+        47
+      ],
+      "secondary_case_ids": [
+        6,
+        11,
+        21,
+        31,
+        33,
+        44,
+        45
+      ],
+      "total_cases": 11
+    },
+    {
+      "code": "COMPLIANCE_CHECK",
+      "name": "Проверка на соответствие нормам, срокам и эталонам",
+      "common_pain": "Нужно сопоставить факт с нормой, сроком или эталонным значением и найти отклонение; ошибки неочевидны и требуют постоянной концентрации.",
+      "reusable_pattern": "Движок правил «факт против нормы или срока» с перечнем отклонений и степенью уверенности. Кейсы 35 и 41 — один и тот же механизм на разных реестрах (ВПД и РКМ).",
+      "primary_case_ids": [
+        6,
+        14,
+        35,
+        41
+      ],
+      "secondary_case_ids": [
+        2,
+        5
+      ],
+      "total_cases": 6
+    },
+    {
+      "code": "RECONCILIATION",
+      "name": "Сверка и сопоставление записей",
+      "common_pain": "Две записи или реестра нужно сопоставить по неполным или расходящимся реквизитам: платежи и извещения, документы и вложения, справочник и кадровые изменения.",
+      "reusable_pattern": "Сопоставление со статусами «совпало / вероятно / не подтверждено / не удалось идентифицировать» и степенью уверенности; решение остаётся за сотрудником.",
+      "primary_case_ids": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "secondary_case_ids": [
+        14
+      ],
+      "total_cases": 5
+    },
+    {
+      "code": "CLASSIFICATION_DEDUP",
+      "name": "Классификация, дедубликация и кластеризация",
+      "common_pain": "Поток обращений, замечаний, текстов или записей в свободной форме: одно и то же описано по-разному, часть не по существу, приоритет определяется вручную.",
+      "reusable_pattern": "Объединение дублей, присвоение класса и приоритета (например, по числу заявителей или критичности) с перечнем источников. Объединяет 13, 15, 21, 36.",
+      "primary_case_ids": [
+        13,
+        15,
+        21,
+        36
+      ],
+      "secondary_case_ids": [
+        1,
+        25,
+        27,
+        37
+      ],
+      "total_cases": 8
+    },
+    {
+      "code": "DOC_GENERATION",
+      "name": "Подготовка документов и справок",
+      "common_pain": "Протоколы, справки, ТЗ, проекты решений и презентации собираются вручную по шаблону; результат зависит от исполнителя, цифры расходятся между таблицей и текстом.",
+      "reusable_pattern": "Проект документа по унифицированной структуре с источником и датой по каждой цифре; финальное решение и правка остаются за сотрудником.",
+      "primary_case_ids": [
+        5,
+        11,
+        33,
+        44
+      ],
+      "secondary_case_ids": [
+        13,
+        25,
+        36,
+        38,
+        39,
+        45,
+        47
+      ],
+      "total_cases": 11
+    },
+    {
+      "code": "EXTERNAL_COLLECTION",
+      "name": "Сбор данных из внешних источников",
+      "common_pain": "Нужные сведения находятся вне ведомственных систем: КАД, ЕФРСБ, реестр ФНП, ЕГРН, ФССП, коммерческие сервисы и сайты объявлений; вручную по большому списку не собрать.",
+      "reusable_pattern": "Коннекторы к внешним источникам (API и сайты) с обновлением по расписанию и выделением изменений. Нужно отдельно решить вопросы доступа и передачи данных вовне.",
+      "primary_case_ids": [
+        8,
+        23,
+        24
+      ],
+      "secondary_case_ids": [
+        9,
+        10,
+        19,
+        22,
+        39
+      ],
+      "total_cases": 8
+    },
+    {
+      "code": "ANALYTICS_REPORTING",
+      "name": "Аналитика, дашборды и регулярная отчётность",
+      "common_pain": "Показатели считаются и переносятся в слайды вручную к каждому совещанию; нет единой картины, нельзя раскрыть цифру до первичных строк.",
+      "reusable_pattern": "Конструктор дашбордов по запросу (кейс 28) и сборка отчёта «по кнопке» на свежих выгрузках с проверкой сходимости; один шаблон закрывает 12, 26, 34, 40, 46.",
+      "primary_case_ids": [
+        3,
+        12,
+        25,
+        26,
+        28,
+        29,
+        34,
+        40,
+        46
+      ],
+      "secondary_case_ids": [
+        15,
+        20,
+        30
+      ],
+      "total_cases": 12
+    },
+    {
+      "code": "RISK_VALUATION",
+      "name": "Оценка платежеспособности, стоимости и рисков",
+      "common_pain": "Для принятия решения о взыскании, отсрочке или обеспечении нужно собрать сведения о финансах, имуществе и операциях и оценить платежеспособность или стоимость.",
+      "reusable_pattern": "Единая методика оценки платежеспособности и приоритизации должников (38, 45, 47, 10, 27) и отдельный контур оценки стоимости имущества (9). Выводы подтверждает сотрудник.",
+      "primary_case_ids": [
+        9,
+        10,
+        27,
+        38,
+        45
+      ],
+      "secondary_case_ids": [],
+      "total_cases": 5
+    },
+    {
+      "code": "DATA_QUALITY_ACCESS",
+      "name": "Качество данных, интеграция и доступ",
+      "common_pain": "Проблема не в анализе, а в самих данных или доступе к ним: данных нет в системе, они некорректны, нет доступа к хранилищу, выгрузки не обезличены.",
+      "reusable_pattern": "Предпосылка для остальных поддоменов: интеграция источников, справочники, доступ на чтение и обезличивание. Эти кейсы (18, 19, 20, 30) блокируют старт других.",
+      "primary_case_ids": [
+        18,
+        19,
+        20,
+        30
+      ],
+      "secondary_case_ids": [],
+      "total_cases": 4
+    },
+    {
+      "code": "PROCESS_AUTOMATION",
+      "name": "Автоматизация процесса и агентные сценарии",
+      "common_pain": "Процесс состоит из последовательности шагов в системах и согласований, которые выполняются вручную с постоянным контролем сроков и статусов.",
+      "reusable_pattern": "Сквозной автоматизированный процесс или агентный доступ к системам (кейсы 4, 17, 31) с жёсткими предохранителями в коде, журналом действий и контролем человека.",
+      "primary_case_ids": [
+        4,
+        17,
+        31
+      ],
+      "secondary_case_ids": [
+        22
+      ],
+      "total_cases": 4
+    }
+  ],
+  "domain_x_subdomain_primary": {
+    "ENS_PAYMENTS": {
+      "DATA_CONSOLIDATION": 0,
+      "DOC_ANALYSIS": 0,
+      "COMPLIANCE_CHECK": 0,
+      "RECONCILIATION": 3,
+      "CLASSIFICATION_DEDUP": 0,
+      "DOC_GENERATION": 0,
+      "EXTERNAL_COLLECTION": 0,
+      "ANALYTICS_REPORTING": 0,
+      "RISK_VALUATION": 0,
+      "DATA_QUALITY_ACCESS": 0,
+      "PROCESS_AUTOMATION": 1
+    },
+    "DEBT_COLLECTION": {
+      "DATA_CONSOLIDATION": 0,
+      "DOC_ANALYSIS": 1,
+      "COMPLIANCE_CHECK": 0,
+      "RECONCILIATION": 0,
+      "CLASSIFICATION_DEDUP": 1,
+      "DOC_GENERATION": 0,
+      "EXTERNAL_COLLECTION": 0,
+      "ANALYTICS_REPORTING": 2,
+      "RISK_VALUATION": 1,
+      "DATA_QUALITY_ACCESS": 0,
+      "PROCESS_AUTOMATION": 0
+    },
+    "BANKRUPTCY": {
+      "DATA_CONSOLIDATION": 1,
+      "DOC_ANALYSIS": 0,
+      "COMPLIANCE_CHECK": 2,
+      "RECONCILIATION": 0,
+      "CLASSIFICATION_DEDUP": 1,
+      "DOC_GENERATION": 0,
+      "EXTERNAL_COLLECTION": 2,
+      "ANALYTICS_REPORTING": 4,
+      "RISK_VALUATION": 0,
+      "DATA_QUALITY_ACCESS": 2,
+      "PROCESS_AUTOMATION": 0
+    },
+    "PAYMENT_DEFERRAL_SUPPORT": {
+      "DATA_CONSOLIDATION": 0,
+      "DOC_ANALYSIS": 2,
+      "COMPLIANCE_CHECK": 1,
+      "RECONCILIATION": 0,
+      "CLASSIFICATION_DEDUP": 0,
+      "DOC_GENERATION": 0,
+      "EXTERNAL_COLLECTION": 1,
+      "ANALYTICS_REPORTING": 1,
+      "RISK_VALUATION": 3,
+      "DATA_QUALITY_ACCESS": 0,
+      "PROCESS_AUTOMATION": 0
+    },
+    "CONTROL_AND_PROVISIONAL_MEASURES": {
+      "DATA_CONSOLIDATION": 0,
+      "DOC_ANALYSIS": 1,
+      "COMPLIANCE_CHECK": 0,
+      "RECONCILIATION": 0,
+      "CLASSIFICATION_DEDUP": 0,
+      "DOC_GENERATION": 0,
+      "EXTERNAL_COLLECTION": 0,
+      "ANALYTICS_REPORTING": 0,
+      "RISK_VALUATION": 1,
+      "DATA_QUALITY_ACCESS": 0,
+      "PROCESS_AUTOMATION": 0
+    },
+    "DISPUTES": {
+      "DATA_CONSOLIDATION": 0,
+      "DOC_ANALYSIS": 0,
+      "COMPLIANCE_CHECK": 0,
+      "RECONCILIATION": 0,
+      "CLASSIFICATION_DEDUP": 0,
+      "DOC_GENERATION": 1,
+      "EXTERNAL_COLLECTION": 0,
+      "ANALYTICS_REPORTING": 0,
+      "RISK_VALUATION": 0,
+      "DATA_QUALITY_ACCESS": 0,
+      "PROCESS_AUTOMATION": 0
+    },
+    "TAXPAYER_FINANCIAL_MONITORING": {
+      "DATA_CONSOLIDATION": 2,
+      "DOC_ANALYSIS": 0,
+      "COMPLIANCE_CHECK": 1,
+      "RECONCILIATION": 0,
+      "CLASSIFICATION_DEDUP": 0,
+      "DOC_GENERATION": 0,
+      "EXTERNAL_COLLECTION": 0,
+      "ANALYTICS_REPORTING": 0,
+      "RISK_VALUATION": 0,
+      "DATA_QUALITY_ACCESS": 0,
+      "PROCESS_AUTOMATION": 0
+    },
+    "INTERNAL_NON_TAX": {
+      "DATA_CONSOLIDATION": 0,
+      "DOC_ANALYSIS": 0,
+      "COMPLIANCE_CHECK": 0,
+      "RECONCILIATION": 1,
+      "CLASSIFICATION_DEDUP": 2,
+      "DOC_GENERATION": 3,
+      "EXTERNAL_COLLECTION": 0,
+      "ANALYTICS_REPORTING": 2,
+      "RISK_VALUATION": 0,
+      "DATA_QUALITY_ACCESS": 2,
+      "PROCESS_AUTOMATION": 2
+    }
+  }
 }

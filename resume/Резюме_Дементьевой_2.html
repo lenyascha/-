@@ -54,6 +54,16 @@
 
   .cert-appendix{ page-break-before:always; }
   .cert-image{ width:100%; height:auto; border:1px solid #ccc; margin-top:12pt; display:block; }
+
+  /* блоки направлений и цифр */
+  .focus-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14pt; margin-top:22pt; }
+  .focus-grid div{ border-left:2pt solid #000; padding-left:8pt; font-size:10.5pt; line-height:1.3; }
+  .focus-grid b{ display:block; text-transform:uppercase; font-size:10pt; margin-bottom:2pt; }
+  .kpi-grid{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1.5pt solid #000; border-bottom:1.5pt solid #000; break-inside:avoid; }
+  .kpi-grid div{ padding:6pt 6pt 7pt 0; }
+  .kpi-grid div:nth-child(-n+4){ border-bottom:0.5pt solid #999; }
+  .kpi-grid .n{ display:block; font-size:17pt; font-weight:bold; line-height:1.1; }
+  .kpi-grid .l{ display:block; font-size:9.5pt; line-height:1.2; color:#333; margin-top:2pt; }
 </style>
 </head>
 <body>
@@ -70,22 +80,22 @@
     </div>
   </div>
 
-  <ul class="summary">
-    <li><b>Корпоративная культура:</b> Формирование стратегии под задачи продуктовых команд (коммуникации / мероприятия / бюджет / обучение / нематериальная мотивация)</li>
-    <li><b>Управление командой:</b> Выявление потребностей руководителей / найм / адаптация / удержание сотрудников / решение конфликтов</li>
-  </ul>
+  <div class="focus-grid">
+    <div><b>Корпоративная культура</b><span>Формирование стратегии под задачи продуктовых команд (коммуникации / мероприятия / бюджет / обучение / нематериальная мотивация)</span></div>
+    <div><b>Управление командой</b><span>Выявление потребностей руководителей / найм / адаптация / удержание сотрудников / решение конфликтов</span></div>
+  </div>
 
   <h2>Результаты в цифрах</h2>
-  <ul>
-    <li><b>12+</b> — лет на государственной гражданской службе</li>
-    <li><b>615</b> — сотрудников в зоне ответственности сейчас</li>
-    <li><b>450+</b> — мероприятий организовано</li>
-    <li><b>3&nbsp;500+</b> — сотрудников вовлечено</li>
-    <li><b>30+</b> — инспекций региона охвачено</li>
-    <li><b>×1,5</b> — рост активности: 180 → 270 мероприятий в год</li>
-    <li><b>200</b> — сотрудников обучены работе с ИИ</li>
-    <li><b>20</b> — ключевых вакансий закрыто</li>
-  </ul>
+  <div class="kpi-grid">
+    <div><span class="n">12+</span><span class="l">лет на государственной гражданской службе</span></div>
+    <div><span class="n">615</span><span class="l">сотрудников в зоне ответственности сейчас</span></div>
+    <div><span class="n">450+</span><span class="l">мероприятий организовано</span></div>
+    <div><span class="n">3&nbsp;500+</span><span class="l">сотрудников вовлечено</span></div>
+    <div><span class="n">30+</span><span class="l">инспекций региона охвачено</span></div>
+    <div><span class="n">×1,5</span><span class="l">рост активности: 180 → 270 мероприятий в год</span></div>
+    <div><span class="n">200</span><span class="l">сотрудников обучены работе с ИИ</span></div>
+    <div><span class="n">20</span><span class="l">ключевых вакансий закрыто</span></div>
+  </div>
 
   <h2>Текущее место работы</h2>
   <div class="job">

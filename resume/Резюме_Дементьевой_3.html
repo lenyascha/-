@@ -335,7 +335,20 @@
     header.hero{gap:14px;}
     .summary{padding-top:14px; gap:6px;}
     .product-badges{padding-top:12px; break-inside:avoid; break-before:avoid;}
-    @page{size:A4; margin:10mm;}
+    /* компактная печать: шире область, плотнее строки */
+    main{padding:18px 16px 18px 22px;}
+    main > header.hero{margin-bottom:18px;}
+    main > section.block{margin-top:24px;}
+    .stat-row{padding-top:20px;}
+    aside{padding:18px 16px; gap:14px;}
+    .summary li, ul.bullets li, .hobby-list li, .edu-body, .course-body{line-height:1.32; max-width:none;}
+    .about-text{line-height:1.4; max-width:none;}
+    .job-intro{max-width:none;}
+    .motto{line-height:1.35;}
+    ul.bullets, .hobby-list{gap:4px;}
+    .job{gap:6px;}
+    .spotlight{padding:18px 18px; gap:10px;}
+    @page{size:A4; margin:6mm;}
   }
 </style>
 
